@@ -64,3 +64,12 @@ export const changeQty = id =>{
         }
     }
 }
+
+export const filter = type =>{
+    return{
+        type: actions.FILTER,
+        payload:{
+            type
+        }
+    }
+}

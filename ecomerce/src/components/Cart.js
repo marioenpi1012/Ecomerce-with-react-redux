@@ -11,12 +11,19 @@ const Cart = () => {
     return (
         <div className='Cart'>
             <div className="container">
+                <div className="labels">
+                    <div className="title">Title</div>
+                    <div className="quantity">Quantity</div>
+                    <div className="price">Price</div>
+                </div>
                 <div className="items">
                 {products.map(product =>
                     (<div className="item" key={product.id}>
                         <div className="info">
                             <div className="remove">
-                                <input type="button" value="X" onClick={()=>dispatch(removedFromCart(product.id))} />
+                                <input type="button" value="X" 
+                                onClick={()=>dispatch(removedFromCart(product.id))}
+                                />
                             </div>
                             <div className="image">
                                 <img src={product.image} alt="" />
@@ -27,9 +34,10 @@ const Cart = () => {
                             <input 
                             type="number" 
                             name="qty"  
-                            min='1' max='100' 
+                            min='0' max='100' 
                             id="qty" 
                             defaultValue={product.qty}
+                            data-id={product.id}
                             onChange={()=>dispatch(changeQty(product.id))}
                             />
                         </div>

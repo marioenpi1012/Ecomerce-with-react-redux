@@ -13,8 +13,6 @@ const Nav = () => {
                     <NavLink to='/shop'>Shop</NavLink>
                     <NavLink to='/about' >About</NavLink>
                     <NavLink to='/contact' >Contact</NavLink>
-                    
-                    
                 </div>
                 <div className="cart">
                     <NavLink to='/cart'><FaShoppingCart/> </NavLink>

@@ -45,12 +45,13 @@ export const cartReducer = (state = initState, action)=>{
     }
             
         case actions.REMOVED_FROM_CART:{
-            let itemsToRemove = state.cart.find(product => action.payload.id === product.id)
-            let newTotal = state.total - (itemsToRemove.price * itemsToRemove.qty)
+            let itemToRemove = state.cart.find(product => action.payload.id === product.id)
+            let newTotal = state.total - (itemToRemove.price * itemToRemove.qty)
             return {
                 ...state, 
                 cart: state.cart.filter(product => product.id !== action.payload.id),
-                total:newTotal
+                total:newTotal,
+                itemsInCart: state.itemsInCart - itemToRemove.qty
             }}
 
         case actions.ADDED_QTY:{
@@ -87,25 +88,51 @@ export const cartReducer = (state = initState, action)=>{
                 ...state,
                 viewing: selectedProduct}
         }
-        case actions.ADDED_QTY:{
-
-        }
         case actions.CHANGE_QTY:{
             const product = state.cart.find(product => product.id === action.payload.id)
             const originalQty = product.qty
-            const newQty = document.getElementById('qty').value;
+            const newQty = document.querySelector(`[data-id="${product.id}"]`).value
             const differentQty = newQty - originalQty
             const newTotal = state.total + (product.price * differentQty)
             product.qty = newQty
-            console.log(newQty)
+            if(product.qty == 0 ){
+                const newTotal = state.total - product.price
+                return{
+                    ...state,
+                    cart:state.cart.filter(product => product.id !== action.payload.id),
+                    total:newTotal,
+                    itemsInCart: state.itemsInCart - 1
+                }
+            }
             return {
                 ...state,
                 cart:[
                         ...state.cart,
-                        product
                 ],
-                total:newTotal
-                
+                total:newTotal,
+                itemsInCart: state.itemsInCart + differentQty
+            }
+        }
+        case actions.FILTER:{
+            const products = state.products
+            switch (action.payload.type) {
+                case 'low-high-price':
+                    
+                    break;
+                case 'high-low-price':
+                    
+                    break;
+                case "men's clothing":
+                        return {
+                            products:products.filter(product => product.category === action.payload.type)
+                        }
+                    
+                    break;
+                case 'default':
+                    return state
+                default:
+                    return state
+                    break;
             }
         }
         default:

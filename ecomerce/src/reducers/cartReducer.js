@@ -3,6 +3,7 @@ import * as actions from '../actions/actionsTypes'
 const initState = {
     products:[],
     cart : [],
+    filterBy: [],
     itemsInCart:0,
     total: 0
 }
@@ -12,7 +13,8 @@ export const cartReducer = (state = initState, action)=>{
         case actions.PRODUCTS:{
             return{
                 ...state,
-                ...action.payload
+                ...action.payload,
+                filterBy:action.payload.products
             }
         }
         case actions.ADDED_TO_CART:{
@@ -114,26 +116,42 @@ export const cartReducer = (state = initState, action)=>{
             }
         }
         case actions.FILTER:{
-            const products = state.products
             switch (action.payload.type) {
-                case 'low-high-price':
-                    
-                    break;
-                case 'high-low-price':
-                    
-                    break;
+                case "default":
+                    return {
+                        ...state,
+                        filterBy: state.products
+                    }
+                case "women's clothing":
+                    return {
+                        ...state,
+                        filterBy: state.products.filter(product => product.category === action.payload.type)
+                    }
                 case "men's clothing":
-                        return {
-                            products:products.filter(product => product.category === action.payload.type)
-                        }
-                    
-                    break;
-                case 'default':
-                    return state
+                    return {
+                        ...state,
+                        filterBy:state.products.filter(product => product.category === action.payload.type)
+                    }
+                case "jewelery":
+                    return {
+                        ...state,
+                        filterBy: state.products.filter(product => product.category === action.payload.type)
+                    }
+                case "electronics":
+                    return {
+                        ...state,
+                        filterBy: state.products.filter(product => product.category === action.payload.type)
+                    }
+                case 'asc':
+                    return {
+                        ...state,
+                        filterBy: state.products.slice().sort((a,b) => a.price - b.price)
+                    }
                 default:
                     return state
                     break;
             }
+            
         }
         default:
             return state

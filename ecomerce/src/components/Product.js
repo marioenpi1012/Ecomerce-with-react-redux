@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink} from 'react-router-dom'
-import { selectedProduct } from '../actions'
+import { filter, selectedProduct } from '../actions'
 
 const Product = () => {
     const dispatch = useDispatch()
-    const products = useSelector(state => state.cart.products)
+    const filterBy = useSelector(state => state.cart.filterBy)
+    
     const Hover =(id) =>{
         const btn = document.querySelector(`[data-button-id="${id}"]`)
         btn.style.display = 'flex'
@@ -13,7 +14,19 @@ const Product = () => {
         const btn = document.querySelector(`[data-button-id="${id}"]`)
         btn.style.display = ''
     }
-    const productsRender = products.map(product =>{
+
+    console.log(filterBy)
+    
+    const sorted = filterBy.sort((a,b) =>{
+        if(a.price - b.price){
+            return a.price - b.price
+        }else if (b.price - a.price){
+            return b.price - a.price
+        }
+    })
+
+    const productsRender = sorted.map(product =>{
+        
         return (
                 <div className="item" key={product.id} id={product.id} onMouseOver={()=>Hover(product.id)} onMouseOut={()=>notHover(product.id)} >
                     <div className="image">

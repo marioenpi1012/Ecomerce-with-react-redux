@@ -4,6 +4,7 @@ const initState = {
     products:[],
     cart : [],
     filterBy: [],
+    viewing:'',
     itemsInCart:0,
     total: 0
 }
@@ -142,20 +143,15 @@ export const cartReducer = (state = initState, action)=>{
                         ...state,
                         filterBy: state.products.filter(product => product.category === action.payload.type)
                     }
-                case 'asc':
-                    return {
-                        ...state,
-                        filterBy: state.products.slice().sort((a,b) => a.price - b.price)
-                    }
+                
                 default:
                     return state
-                    break;
             }
             
         }
         default:
             return state
-    }
+    }                                      
 }
 
 export default cartReducer;

@@ -1,44 +1,46 @@
-import {React, useEffect} from 'react'
-import axios from 'axios'
+import {React, useState, } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { filter, products, selectedProduct } from '../actions'
+import { filter, products,  } from '../actions'
 import Product from './Product'
 const Products = () => {
     const dispatch = useDispatch()
-    const fetchProducts = async () =>{
-    const response = await axios
-        .get('https://fakestoreapi.com/products')
-        .then((response)=>{dispatch(products(response.data))})
-        .catch((err)=>{
-            console.log('err',err)
-        })
-    }
+    const filterBy = useSelector(state => state.cart.filterBy)
+    const [filterByPrice, setFilterByPrice] = useState('')
     const getValue = (e) =>{
         const filterBy = e.target.value
         dispatch(filter(filterBy))
     }
-    useEffect(() => {
-        fetchProducts()
-        
-    }, [])
+    const value = () =>{
+        switch (filterByPrice) {
+            case 'asc':
+                return filterBy.slice().sort((a,b)=>a.price - b.price)
+            case 'desc':
+                return filterBy.slice().sort((a,b)=>b.price - a.price)
+            default:
+                return filterBy
+        }
+    }
+    const data = value()
     
     return (
         <div className='Shop'>
         <div className="filter">
-            <select name="filter" id="filter" onChange={(e)=> getValue(e)} >
-                <option value="default">Filter Item: </option>
-                <option value="desc">Highest to lowest</option>
-                <option value="asc">Lowest to highest</option>
-                <option value="men's clothing">Men's clothing</option>
+            <select name="filter-category" id="filter-category" onChange={(e)=> getValue(e)} >
+                <option value="default">Filter By Category: </option>
+                <option value="women's clothing">Women's Clothing</option>
+                <option value="men's clothing">Men's Clothing</option>
                 <option value="jewelery">Jewelery</option>
                 <option value="electronics">Electronics</option>
             </select>
         </div>
-            <div className="container">
-                <div className="items">
-                    <Product />
-                </div>
-            </div>
+        <div className="filter filter-price">
+                        <select name="filter-price" id="filter-price" onChange={(e)=> setFilterByPrice(e.target.value)}>
+                            <option value="normal">Filter By Price (Default) </option>
+                            <option value="desc">Highest Price</option>
+                            <option value="asc">Lowest Price</option>
+                        </select>
+                    </div>
+            <Product data={data} />
         </div>
     )
 }

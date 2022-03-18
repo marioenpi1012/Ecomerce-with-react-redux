@@ -1,17 +1,24 @@
-import React from 'react'
+import {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { addedToCart } from '../actions'
+import AddedToCart from './AddedToCart'
 
 const SelectedProduct = () => {
     const selectedProduct = useSelector(state=>state.cart.viewing)
     const dispatch = useDispatch()
+    // False if the item hasn't been added to cart; and true if it has
+    const [added, setAdded] = useState(false)
+    const addedBtn = (id) =>{
+        dispatch(addedToCart(id))
+        setAdded(!added)
+    }
     return (
         <div className='SelectedProduct'>
-        <div className="close">
-            <NavLink to='/shop'>X</NavLink>
-        </div>
-            <div className="container">
+            <div className="close">
+                <NavLink to='/shop'>X</NavLink>
+            </div>
+            <div className="container" id="container" style={added?{filter:"blur(1px)"}:{}}>
                 <div className="image">
                     <img src={selectedProduct.image} alt="image" />
                 </div>
@@ -25,10 +32,11 @@ const SelectedProduct = () => {
                     <input type="submit" 
                         value='Add To Cart' 
                         className="add-to-cart"
-                        onClick={()=>dispatch(addedToCart(selectedProduct.id))}
+                        onClick={()=> addedBtn(selectedProduct.id)}
                         />
                 </div>
             </div>
+            <AddedToCart added={added} setAdded={setAdded} item={selectedProduct} />
         </div>
     )
 }

@@ -9,8 +9,8 @@
   width: 90%;
   margin: 1rem auto;
   justify-content: space-between;
-  align-items: center;
   position: relative;
+  align-content: center;
   a{
     color: inherit;
     text-decoration: none;
@@ -21,11 +21,21 @@
   .links{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    text-align: center;
     a{
       padding:  0 .5rem;
     }
+    .current{
+      color: #555;
+    }
     
   }
+  .menu{
+    .mobileMenu{
+      display: none;
+  }
+  
   .cart{
     span{
       position: absolute;
@@ -33,12 +43,80 @@
       top: -.5rem;
     }
   }
-}
-.Shop{
-  margin: 5rem 0 ;
-  .filter{
-    margin: 1rem 0;
   }
+  
+}
+.Home{
+  .landing{ 
+    .container{
+      width:90%;
+      margin:0 auto;
+      .text{
+        
+      }
+      .btn a input{
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0 ;
+        cursor: pointer;
+        border: none;
+        border-radius: 5%;
+        -moz-border-radius:5%;
+        -webkit-border-radius:5%;
+      }
+    }
+  }
+
+  .top-rated{
+    margin: 0 1.5rem;
+  
+  }
+  
+  // Carousel Style
+  .carousel{
+    position: relative;
+    .controllers{
+    position:absolute;
+    width: 100%;
+    top: 40%;
+    .next{
+      position: absolute;
+      right:0%;
+    }
+    }
+    .Product{
+    cursor: pinter;
+    .container{
+      .items{
+        display: grid;
+        // gap: .2rem;
+        grid-template-rows: min-content;
+        grid-auto-flow: column;
+        grid-auto-columns: 21%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+
+        .item{
+          // padding: .2rem;
+          border-radius: 5%;
+          -moz-border-radius:5%;
+          -webkit-border-radius:5%;
+          margin-top: 0;
+
+          .image > img{
+          inline-size: 100%;
+          // aspect-ratio: 16 / 9;
+          object-fit: cover;
+        }
+        }
+        
+      }
+    }
+  }
+  }
+  
+  
+}
+.Product{
   .container{
     width: 90%;
     margin:auto;
@@ -46,6 +124,10 @@
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      .filter-price{
+        margin: -2.3rem 10rem ;
+        position: absolute;
+      }
       .item{
         position: relative;
         display: flex;
@@ -102,6 +184,13 @@
     }
   }
 }
+.Shop{
+  margin: 5rem 0 ;
+  .filter{
+    margin: 1rem;
+  }
+  
+}
 .SelectedProduct{
   width: 100%;
   position: relative;
@@ -157,6 +246,47 @@
       }
     }
   }
+  .cartPreview{
+    position: absolute;
+    display: none;
+    height: 25vh;
+    top: 5rem;
+    left: 70%;
+    background:#fff;
+    z-index: 1;
+    width: 25%;
+    .titles{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 1rem;
+      .control-btn{
+        display: inherit;
+        align-items: center;
+      }
+    }
+    .container{
+      display: flex;
+      margin: auto;
+      align-items: center;
+      justify-content:space-between;
+      .added-item{
+        .item-img img{
+        width: 100%;
+        height: 100px;
+        }
+      }
+      .cart-container{
+        input{
+          width: 8rem;
+          height: 2rem;
+          margin: 1rem 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
 }
 .Cart{
   .container{
@@ -221,6 +351,56 @@
       .subtotal, .checkout{
         align-self:end;
         margin: 1rem 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:600px){
+  .Nav{
+    .logo{
+      font-size: 1.2rem;
+    }
+    .links{
+        display: none;
+        position: relative;
+        justify-content: unset;
+        transform: translate(-75%, 25%);
+        transition:transform 250ms cubic-bezier(0.1, 0.2, 0.3, 0.4);
+        will-change: transform;
+        height: 100vh;
+        flex-direction: column;
+        a{
+          margin: 2rem 0;
+          font-size: 1.5rem;
+        }
+      }
+      .menu{
+        display: flex;
+        justify-content: space-between;
+        .mobileMenu{
+          display: block;
+          margin: 0 1rem;
+          transition: all  2s ease-out;
+        }
+      }
+    
+    
+  }
+  .Home{
+    .Product{
+      width: 90%;
+      margin: 7rem auto;
+      .container{
+        overflow: scroll;
+        .items{
+          display: flex;
+          overflow: hidden;
+          .item{
+            flex:1 0 30%;
+            margin: 0 2rem;
+          }
+        }
       }
     }
   }

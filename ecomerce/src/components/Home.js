@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Product from './Product'
 import {FaGreaterThan, FaLessThan} from 'react-icons/fa'
+import landingPage from '../images/landingPage 1.png'
 const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter(item => Number(item.rating.rate) > 3.5)
@@ -39,11 +40,10 @@ const Home = () => {
     return (
         <div className='Home'>
             <div className="landing">
+            <img src={landingPage} alt="" srcset="" />
                 <div className="container">
-                    <div className="item-info">
-                        <div className="title"></div>
-                        <div className="img"></div>
-                    </div>
+                    
+
                     <div className="text">
                         <p>Shop our awesome inventory of clothing, jewelry, and electronics </p>
                     </div>

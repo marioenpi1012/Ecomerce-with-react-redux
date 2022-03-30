@@ -9,5 +9,7 @@ export const totalPrice = (products) =>{
             prices +=  total(product.qty, product.price)
             
         })
-        return "$" + prices.toFixed(2)
+        // This adds commas to separate numbers eg = 1,000
+        let nf = new Intl.NumberFormat('en-US')
+        return "$" + nf.format(prices)
     }

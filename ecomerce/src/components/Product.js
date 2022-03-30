@@ -18,7 +18,7 @@ const Product = ({data}) => {
         return (
                 <div className="item" key={product.id} id={product.id} onMouseOver={()=>Hover(product.id)} onMouseOut={()=>notHover(product.id)} >
                     <div className="image">
-                        <img src={product.image} alt="image"  />
+                        <img src={product.image} alt="image" width='200' height="200" /> 
                     </div>
                     <div className="title">{product.title}</div>
                     <div className="price">${product.price}</div>

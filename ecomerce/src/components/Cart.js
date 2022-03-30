@@ -25,12 +25,13 @@ const Cart = () => {
                 <div className="items">
                 {products.map(product =>
                     (<div className="item" key={product.id}>
-                        <div className="info">
-                            <div className="remove">
+                    <div className="remove">
                                 <input type="button" value="X" 
                                 onClick={()=>dispatch(removedFromCart(product.id))}
                                 />
                             </div>
+                        <div className="info">
+                            
                             <div className="image">
                                 <img src={product.image} alt="" />
                             </div>
@@ -51,7 +52,7 @@ const Cart = () => {
                     </div>)
                 )}
                     
-                    <div className="subtotal">Subtotal:{totalPrice(products)} </div>
+                    <div className="subtotal">Subtotal: {totalPrice(products)} </div>
                     <div className="checkout">
                         <input type="button" value='checkout' />
                     </div>

@@ -12,6 +12,11 @@ const SelectedProduct = () => {
     const addedBtn = (id) =>{
         dispatch(addedToCart(id))
         setAdded(!added)
+
+        //After 5 seconds the added variable becomes false 
+         setTimeout(() => {
+             setAdded(added)
+        }, 5000);
     }
     return (
         <div className='SelectedProduct'>
@@ -35,8 +40,10 @@ const SelectedProduct = () => {
                         onClick={()=> addedBtn(selectedProduct.id)}
                         />
                 </div>
-            </div>
-            <AddedToCart added={added} setAdded={setAdded} item={selectedProduct} />
+            </div> 
+            
+            <AddedToCart added={added} setAdded={setAdded} item={selectedProduct} />;
+                        
         </div>
     )
 }

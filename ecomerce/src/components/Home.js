@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Product from './Product'
 import {FaGreaterThan, FaLessThan} from 'react-icons/fa'
-import landingPage from '../images/landingPage 1.png'
+import landingPage from '../images/landingPage.png'
 const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter(item => Number(item.rating.rate) > 3.5)
@@ -12,7 +12,6 @@ const Home = () => {
     const max = Math.floor(19)
     const id =  Math.floor(Math.random()* (max - min + 1))
     const item = state.find(item => item.id === id)
-   
 
     const next = () =>{
         console.log('working')
@@ -39,8 +38,9 @@ const Home = () => {
     }
     return (
         <div className='Home'>
-            <div className="landing">
-            <img src={landingPage} alt="" srcset="" />
+            <div className="landing" style={{
+                backgroundImage:`url("${landingPage}")`
+            }}>
                 <div className="container">
                     
 
@@ -54,20 +54,15 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='top-rated'>Our Top Rated Items:</div>
+            <div className='top-rated'>Top Rated: </div>
             
-            <div className="sections">
-                
-            </div>
             <div className="carousel">
-            <div className="controllers">
-                <div className="prev" onClick={()=> previous()}><FaLessThan/></div>
-                <div className="next" onClick={()=> next()}><FaGreaterThan/></div>
-            </div>
+                <div className="controllers">
+                    <div className="prev" onClick={()=> previous()}><FaLessThan/></div>
+                    <div className="next" onClick={()=> next()}><FaGreaterThan/></div>
+                </div>
                 <Product data={highestRated} />
             </div>
-            
-            
         </div>
     )
 }

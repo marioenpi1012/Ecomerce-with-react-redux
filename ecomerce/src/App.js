@@ -9,6 +9,9 @@ import Home from './components/Home'
 import SelectedProduct from './components/SelectedProduct';
 import Products from './components/Products';
 import Cart from './components/Cart';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 function App() {
   const dispatch = useDispatch()
   
@@ -37,6 +40,9 @@ function App() {
         </Route>
         <Route path='/viewing' component={SelectedProduct} />
         <Route path='/cart' component={Cart} />
+        <Route path='/about' component={About} />
+        <Route path='/contact' component={Contact}/>
+        <Footer />
       </div>
     </Router>
   )

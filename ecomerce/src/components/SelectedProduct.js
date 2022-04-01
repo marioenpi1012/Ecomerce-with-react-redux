@@ -14,8 +14,8 @@ const SelectedProduct = () => {
         setAdded(!added)
 
         //After 5 seconds the added variable becomes false 
-         setTimeout(() => {
-             setAdded(added)
+        setTimeout(() => {
+            setAdded(added)
         }, 5000);
     }
     return (

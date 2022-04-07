@@ -4,10 +4,12 @@ const Footer = () => {
     return (
         <div className='Footer'>
             <div className="container">
-                <div className="logo">Narvick's Luxury Store</div>
+                <div className="logo">
+                    <NavLink to='/'>Narvick's Luxury Store</NavLink>
+                </div>
                 <div className="links">
                     <div className="nav-links" >
-                        <NavLink to='/home' >Home</NavLink>
+                        <NavLink to='/' >Home</NavLink>
                         <NavLink to='/shop'>Shop </NavLink>
                         <NavLink to='/about' >About </NavLink>
                         <NavLink to='/contact' >Contact </NavLink>

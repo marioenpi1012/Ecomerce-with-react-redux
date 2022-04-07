@@ -621,6 +621,11 @@ $light-gray : rgba(250, 248, 248, 0.603);
     display: grid;
     grid-template-columns:20% 1fr 25%;
     align-items: baseline;
+    .logo a{
+      text-decoration: none;
+      color: $black;
+      font-weight: 300;
+    }
     .links{
       display: grid;
       grid-template-columns: repeat(3,1fr);

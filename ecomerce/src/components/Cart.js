@@ -59,7 +59,7 @@ const Cart = () => {
                 </div>
             </div>
         ):
-    (<div>The cart is empty, continue <NavLink to='/shop'>Shopping</NavLink>.</div>)
+    (<div className='msg'>The cart is empty, continue <NavLink to='/shop'>Shopping</NavLink>.</div>)
     }
 
         </div>

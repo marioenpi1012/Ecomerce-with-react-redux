@@ -20,17 +20,18 @@ const Home = () => {
         const itemsLength = document.querySelector('.items').scrollWidth
         let scroll = 0;
         if(itemsLength >= scroll){
-            scroll = document.querySelector('.items').scrollLeft += containerLength.scrollWidth - itemLength.scrollWidth
+            scroll = document.querySelector('.items').scrollLeft += containerLength.scrollWidth +  42.5
             
         }
         const sections = itemsLength / containerLength
-        console.log(sections)
+        console.log(itemLength.scrollWidth)
     }
     const previous = () =>{
         const containerLength = document.querySelector(".container").scrollWidth
         const itemLength = document.querySelector('.item')
         const itemsLength = document.querySelector('.items').scrollWidth
         const scroll = document.querySelector('.items').scrollLeft -= containerLength + itemLength.scrollWidth
+        console.log(itemLength)   
     }
     const slider = ()=>{
         

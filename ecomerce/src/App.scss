@@ -132,7 +132,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
         // gap: .2rem;
         grid-template-rows: min-content;
         grid-auto-flow: column;
-        grid-auto-columns: 21%;
+        grid-auto-columns: 20%;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
         &::after{
@@ -597,17 +597,21 @@ $light-gray : rgba(250, 248, 248, 0.603);
         }
         textarea{
           height: 50px;
-
         }
       }
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover, 
+      input:-webkit-autofill:focus, 
+      input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $gray inset !important;
+}
       input[type='submit']{
         border: 1px solid $black;
         text-align: center;
         margin: 3rem auto;
         padding: 1rem 10rem;
         cursor: pointer;
-
-        &:hover{
+        &:hover, &:focus, &:active{
           background-color: $black;
           color: $gray;
         }
@@ -624,7 +628,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
     .logo a{
       text-decoration: none;
       color: $black;
-      font-weight: 300;
+      font-weight: 500;
+      font-size:1.5rem;
     }
     .links{
       display: grid;
@@ -678,7 +683,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
             background: #fff;
             margin: 2rem 0;
 
-            &:hover{
+            &:hover, &:focus, &:active{
               background: $black;
               color: $gray;
             }
@@ -720,17 +725,166 @@ $light-gray : rgba(250, 248, 248, 0.603);
     
   }
   .Home{
-    .Product{
+    .landing{
+      .container{
+        top:25%;
+        .text{
+          font-size: 1.25rem;
+        }
+      }
+    }
+    .carousel{
+      .Product{
       width: 90%;
       margin: 7rem auto;
       .container{
         overflow: scroll;
         .items{
-          display: flex;
-          overflow: hidden;
+          grid-auto-columns: 100% !important;
           .item{
-            flex:1 0 30%;
-            margin: 0 2rem;
+            text-align: center;
+            margin: auto;
+          }
+        }
+      }
+    }
+    }
+    
+  }
+  .Shop{
+    .Product{
+      margin: 2.5rem 0;
+      .container{
+        .items{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          grid-gap:1rem;
+          .item{
+            margin: 0;
+            a input{
+              left: 5%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .SelectedProduct{
+    .container{
+      flex-direction: column;
+      .image{
+        margin: 1rem 0;
+      }
+      .item-info{
+        .title, .description{
+          width: 15rem;
+        }
+      }
+    }
+    .cartPreview{
+      max-width: 70vw;
+    }
+  }
+  .Cart{
+    height: 100vh;
+    .msg{
+      text-decoration: none;
+      margin:2rem 1rem;
+    }
+    .container{
+      .items{
+        margin: 1rem 0;
+        .item{
+          grid-template-columns: 5% 53% 20% 20%;
+          .info{
+            .title{
+              font-size: 0.8rem;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+  .About{
+    div .title{
+      margin: 3rem 0;
+    }
+    .container{
+      grid-template-columns: 1fr;
+      #designer-image{
+        grid-column-start: initial;
+        grid-row-start: initial;
+      }
+    }
+  }
+  .Contact{
+    .header{
+      font-size: 2rem;
+    }
+    .container{
+      .mini-header{
+        font-size: 1.3rem;
+      }
+      .line{
+        width: 10%;
+      }
+      .info{
+        .store, .hours,.contact{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .title{
+            font-size: 1.3rem;
+          }
+          .text{
+            font-size: .825rem;
+            font-weight: 200;
+            max-width: 80%;
+          }
+        }
+      }
+      .inquiries p{
+        font-size: .8rem;
+        max-width: 70%;
+      }
+      .form form{
+        margin: 0 1rem;
+        max-width: 100%;
+      }
+    }
+  }
+  .Footer{
+    .container{
+      grid-template-columns: 1fr;
+      text-align:center;
+      grid-gap: 1.5rem;
+      .links{
+        grid-template-columns: inherit;
+      }
+    }
+    }
+}
+@media screen and (max-width:1024px){
+  .Home{
+    .carousel{
+      .Product{
+        .container{
+          .items{
+            grid-auto-columns: 25%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:768px){
+  .Home{
+    .carousel{
+      .Product{
+        .container{
+          .items{
+            grid-auto-columns: 33%;
           }
         }
       }

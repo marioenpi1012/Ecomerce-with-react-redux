@@ -87,7 +87,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
         }
       }
       .btn {
-        a input{
+        a input #collectionBtn{
+          -webkit-appearance: none;
           background-color: $black;
           color: $white;
           padding: 1rem 1.5rem;
@@ -236,8 +237,10 @@ $light-gray : rgba(250, 248, 248, 0.603);
   margin: 5rem 0 ;
   .filter{
     margin: 1rem;
-    color: $black;
-    border: none;
+    select{
+      color: $black;
+      border: 1px solid black;
+    }
   }
   
 }

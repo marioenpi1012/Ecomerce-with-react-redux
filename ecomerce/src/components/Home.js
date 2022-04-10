@@ -50,7 +50,7 @@ const Home = () => {
                     </div>
                     <div className="btn">
                         <NavLink to='/shop'>
-                            <input type="button" value="Check Our Collection" />
+                            <input type="button" id='collectionBtn' value="Check Our Collection" />
                         </NavLink>
                     </div>
                 </div>

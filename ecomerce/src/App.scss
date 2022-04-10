@@ -58,16 +58,14 @@ $light-gray : rgba(250, 248, 248, 0.603);
   .landing{ 
       height: 100vh;
       width: 100vw;
-      min-height: 100vh;
+      min-height: 300px;
+      position: relative;
       background-attachment: fixed ;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      position:relative;
       margin:  0 0 5rem;
-      img{
-        width: 100%;
-      }
+      
     .container{
       position:absolute;
       top: 35%;

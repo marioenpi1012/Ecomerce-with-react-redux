@@ -57,7 +57,6 @@ $light-gray : rgba(250, 248, 248, 0.603);
   overflow: hidden;
   .landing{ 
       height: 100vh;
-      width: 100vw;
       min-height: 300px;
       position: relative;
       background-attachment: fixed ;
@@ -504,8 +503,6 @@ $light-gray : rgba(250, 248, 248, 0.603);
       }
     }
     .image{
-      width: 100%;
-      height:100%;
       min-height: 700px;
       background-attachment:fixed;
       background-position: center;

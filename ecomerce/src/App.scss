@@ -88,7 +88,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
       }
       .btn {
         a input #collectionBtn{
-          -webkit-appearance: none;
+          -webkit-appearance:push-button;
           background-color: $black;
           color: $white;
           padding: 1rem 1.5rem;

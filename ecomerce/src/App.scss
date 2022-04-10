@@ -479,7 +479,6 @@ $light-gray : rgba(250, 248, 248, 0.603);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2,1fr);
     margin: 2.5rem 0;
-    perspective: 10px;
     .title{
       font-size: 2rem;
       color: $black;
@@ -515,11 +514,10 @@ $light-gray : rgba(250, 248, 248, 0.603);
       min-height: 700px;
       z-index: -2;
       top: 0;
-      background-attachment:fixed !important;
+      background-attachment:fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size:cover;
-      transform: translateZ(-10) scale(2);
       
     }
   }

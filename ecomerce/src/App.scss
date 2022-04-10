@@ -217,9 +217,6 @@ $light-gray : rgba(250, 248, 248, 0.603);
           padding:1rem 3rem ;
           margin: .5rem 0;
           color: $black;
-          // text-align: center;
-          // width: 8rem;
-          // height: 3rem;
           border: none;
           border-radius: .5rem;
           -webkit-border-radius:.5rem;
@@ -227,8 +224,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
           text-transform: uppercase;
           display: none;
           position: absolute;
-          top: 50%;
-          left: 25%;
+          top: 40%;
+          left: 15%;
           transition: ease-in-out 1s;
           cursor: pointer;
 
@@ -301,6 +298,9 @@ $light-gray : rgba(250, 248, 248, 0.603);
         
       }
       .add-to-cart{
+        -webkit-appearance: button;
+        color: $black;
+        background-color: $gray;
         padding: 1rem 2.5rem;
         text-transform: uppercase;
       }
@@ -784,6 +784,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
   }
   .SelectedProduct{
+    margin-bottom: 5rem;
     .container{
       flex-direction: column;
       .image{

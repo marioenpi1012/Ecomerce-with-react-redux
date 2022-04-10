@@ -90,7 +90,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
         a  #collectionBtn{
           background-color: $black;
           color: $white;
-          padding: 1rem 1.5rem;
+          width: 10rem;
+          height: 3rem;
           margin: 1.5rem 0 ;
           cursor: pointer;
           border: none;

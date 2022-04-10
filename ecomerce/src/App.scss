@@ -504,11 +504,16 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
     .image{
       min-height: 700px;
-      background-attachment:fixed;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: center center no-repeat fixed;
+      // background-attachment:fixed;
+      // background-position: center;
+      // background-repeat: no-repeat;
       background-size:cover;
-      
+    }
+    @supports (-webkit-touch-callout:none){
+      .image{
+        background: center top no-repeat scroll ;
+      }
     }
   }
 }

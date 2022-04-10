@@ -1,7 +1,7 @@
 {
   "name": "ecomerce",
   "version": "0.1.0",
-  "homepage": "https://marioenpi1012.github.io/Ecomerce-with-react-redux/ecomerce",
+  "homepage": "https://marioenpi1012.github.io/Ecomerce-with-react-redux",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",

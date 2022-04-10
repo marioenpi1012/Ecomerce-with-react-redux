@@ -64,7 +64,12 @@ $light-gray : rgba(250, 248, 248, 0.603);
       background-position: center;
       background-repeat: no-repeat;
       margin:  0 0 5rem;
-      
+      @supports (-webkit-touch-callout:none){
+      .image{
+        background: center top no-repeat scroll ;
+        background-size: auto 100%;
+      }
+    }
     .container{
       position:absolute;
       top: 35%;
@@ -513,6 +518,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     @supports (-webkit-touch-callout:none){
       .image{
         background: center top no-repeat scroll ;
+        background-size: auto 100%;
       }
     }
   }

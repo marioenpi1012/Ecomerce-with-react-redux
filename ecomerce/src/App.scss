@@ -493,6 +493,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
     .brand, .designers{
       display: flex;
+      position: relative;
       flex-direction: column;
       justify-content: center;
       min-height: 90vh;
@@ -508,12 +509,15 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
     .image{
       width: 100%;
-      height:auto;
+      height:100%;
       min-height: 700px;
-      background-attachment: fixed;
+      z-index: -2;
+      top: 0;
+      background-attachment:fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size:cover;
+      
       
     }
   }

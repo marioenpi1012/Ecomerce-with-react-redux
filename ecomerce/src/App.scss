@@ -620,6 +620,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
     -webkit-box-shadow: 0 0 0 30px $gray inset !important;
 }
       input[type='submit']{
+        -webkit-appearance: button;
+        color: $black;
         border: 1px solid $black;
         text-align: center;
         margin: 3rem auto;
@@ -690,6 +692,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
             border-bottom: 1px solid $dark-black;
           }
           input[type='submit']{
+            -webkit-appearance: button;
             padding: 1rem 4rem;
             border: 1px solid $black;
             font-size: 1rem;

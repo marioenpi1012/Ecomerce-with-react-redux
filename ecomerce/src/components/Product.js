@@ -23,7 +23,8 @@ const Product = ({data}) => {
                     <div className="title">{product.title}</div>
                     <div className="price">${product.price}</div>
                     <NavLink to='/viewing' >
-                        <input 
+                        <input
+                        id='quickView' 
                         type="button" 
                         value="quick view" 
                         data-button-id={product.id}  

@@ -212,9 +212,12 @@ $light-gray : rgba(250, 248, 248, 0.603);
         .price{
           margin: 1rem 0;
         }
-        a input{
+        a #quickView{
           margin: .5rem 0;
           padding: .8rem 2.3rem;
+          text-align: center;
+          width: 8rem;
+          height: 3rem;
           border: none;
           border-radius: .5rem;
           -webkit-border-radius:.5rem;

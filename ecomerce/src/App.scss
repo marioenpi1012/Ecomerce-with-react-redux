@@ -214,7 +214,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
         }
         a #quickView{
           -webkit-appearance: button;
-          padding:1rem 3rem ;
+          padding:1rem 2.5rem ;
           margin: .5rem 0;
           color: $black;
           border: none;
@@ -225,7 +225,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
           display: none;
           position: absolute;
           top: 40%;
-          left: 15%;
+          left: 10%;
           transition: ease-in-out 1s;
           cursor: pointer;
 

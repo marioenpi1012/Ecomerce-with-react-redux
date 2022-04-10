@@ -26,7 +26,7 @@ const Products = () => {
         <div className='Shop'>
         <div className="filter">
             <select name="filter-category" id="filter-category" onChange={(e)=> getValue(e)} >
-                <option value="default">Filter By Category: </option>
+                <option value="default">Filter By Category (Default): </option>
                 <option value="women's clothing">Women's Clothing</option>
                 <option value="men's clothing">Men's Clothing</option>
                 <option value="jewelery">Jewelery</option>

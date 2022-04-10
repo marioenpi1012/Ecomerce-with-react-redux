@@ -225,7 +225,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
           display: none;
           position: absolute;
           top: 40%;
-          left: 10%;
+          left: 25%;
           transition: ease-in-out 1s;
           cursor: pointer;
 
@@ -775,8 +775,9 @@ $light-gray : rgba(250, 248, 248, 0.603);
           grid-gap:1rem;
           .item{
             margin: 0;
-            a input{
-              left: 25%;
+            a #quickView{
+              left: 15%;
+              padding:1rem 2rem;
             }
           }
         }

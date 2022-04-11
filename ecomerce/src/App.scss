@@ -461,14 +461,15 @@ $light-gray : rgba(250, 248, 248, 0.603);
       .subtotal, .checkout{
         align-self:end;
         margin: 1rem 0;
-        .checkout-btn{
+        
+      }
+      .checkout .checkout-btn{
           -webkit-appearance: button;
           color: $black;
           padding: 1rem 2.5rem;
           text-transform: capitalize;
           cursor: pointer;
         }
-      }
     }
   }
 }

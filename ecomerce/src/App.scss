@@ -466,7 +466,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
       .checkout input{
         -webkit-appearance: button;
         color: $black;
-        padding: .5rem 1.5rem;
+        padding: 1rem 2rem;
         text-transform: capitalize;
         cursor: pointer;
       }
@@ -524,9 +524,6 @@ $light-gray : rgba(250, 248, 248, 0.603);
     .image{
       min-height: 700px;
       background: center center no-repeat fixed;
-      // background-attachment:fixed;
-      // background-position: center;
-      // background-repeat: no-repeat;
       background-size:cover;
     }
     @supports (-webkit-touch-callout:none){
@@ -807,7 +804,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
   }
   .SelectedProduct{
-    margin-bottom: 5rem;
+    margin-bottom: 10rem 0;
     .container{
       flex-direction: column;
       .image{
@@ -821,7 +818,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
     .cartPreview{
       max-width: 70vw;
-      margin-bottom:3rem ;
+      margin-bottom:3rem;
     }
   }
   .Cart{

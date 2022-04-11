@@ -427,6 +427,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
             input{
               border: none;
               color: $black;
+              background: none;
             }
           }
         .info{
@@ -460,12 +461,14 @@ $light-gray : rgba(250, 248, 248, 0.603);
       .subtotal, .checkout{
         align-self:end;
         margin: 1rem 0;
-        input{
-          -webkit-appearance: button;
-          color: $black;
-          padding: .5rem 1.5rem;
-          text-transform: capitalize;
-        }
+        
+      }
+      .checkout input{
+        -webkit-appearance: button;
+        color: $black;
+        padding: .5rem 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
       }
     }
   }
@@ -818,6 +821,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
     .cartPreview{
       max-width: 70vw;
+      margin-bottom:3rem ;
     }
   }
   .Cart{

@@ -461,14 +461,13 @@ $light-gray : rgba(250, 248, 248, 0.603);
       .subtotal, .checkout{
         align-self:end;
         margin: 1rem 0;
-        
-      }
-      .checkout input{
-        -webkit-appearance: button;
-        color: $black;
-        padding: 1rem 2rem;
-        text-transform: capitalize;
-        cursor: pointer;
+        .checkout-btn{
+          -webkit-appearance: button;
+          color: $black;
+          padding: 1rem 2.5rem;
+          text-transform: capitalize;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -804,7 +803,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     }
   }
   .SelectedProduct{
-    margin-bottom: 10rem 0;
+    margin-bottom: 10rem;
     .container{
       flex-direction: column;
       .image{

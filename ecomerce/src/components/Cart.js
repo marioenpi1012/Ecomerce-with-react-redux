@@ -54,7 +54,7 @@ const Cart = () => {
                     
                     <div className="subtotal">Subtotal: {totalPrice(products)} </div>
                     <div className="checkout">
-                        <input type="button" value='checkout' />
+                        <input className='checkout-btn' type="button" value='checkout' />
                     </div>
                 </div>
             </div>

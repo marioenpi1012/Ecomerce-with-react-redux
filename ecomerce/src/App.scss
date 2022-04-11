@@ -55,21 +55,23 @@ $light-gray : rgba(250, 248, 248, 0.603);
 }
 .Home{
   overflow: hidden;
-  @supports (-webkit-touch-callout:none){
-      .landing{
+  .landing{ 
+      height: 100vh;
+      margin:  0 0 5rem;
+      .bg-image{
+        min-height: 100%;
+        position: relative;
+        background-attachment: fixed ;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      @supports (-webkit-touch-callout:none){
+      .bg-image{
         background: center top no-repeat scroll ;
         background-size: auto 100%;
       }
     }
-  .landing{ 
-      height: 100vh;
-      min-height: 300px;
-      position: relative;
-      background-attachment: fixed ;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      margin:  0 0 5rem;
       
     .container{
       position:absolute;
@@ -333,6 +335,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
         margin: auto 1rem;
         align-items: center;
         a{
+          color: $black;
           text-decoration:none;
           font-size:1.1rem
         }
@@ -387,6 +390,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
           -moz-border-radius:5%;
           border:none;
           font-size: 1.25rem;
+          color: $black;
         }
       }
   }
@@ -396,7 +400,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
     margin: auto;
     .labels{
       text-align: center;
-      grid-template-columns: 60% 25% 13%;
+      grid-template-columns: 55% 25% 20%;
       .title{
         max-width: 35rem;
         flex-grow: 1;
@@ -411,7 +415,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
       flex-direction: column;
       justify-content: space-between;
       .item{
-        grid-template-columns: 2% 58% 25% 13%;
+        grid-template-columns: 2% 53% 25% 20%;
         box-sizing: border-box;
         align-items: center;
         margin: 1rem 0;
@@ -422,7 +426,7 @@ $light-gray : rgba(250, 248, 248, 0.603);
             cursor: pointer;
             input{
               border: none;
-              background-color: inherit;
+              color: $black;
             }
           }
         .info{
@@ -456,6 +460,12 @@ $light-gray : rgba(250, 248, 248, 0.603);
       .subtotal, .checkout{
         align-self:end;
         margin: 1rem 0;
+        input{
+          -webkit-appearance: button;
+          color: $black;
+          padding: .5rem 1.5rem;
+          text-transform: capitalize;
+        }
       }
     }
   }

@@ -39,9 +39,10 @@ const Home = () => {
     }
     return (
         <div className='Home'>
-            <div className="landing" style={{
+            <div className="landing">
+                <div className='bg-image'  style={{
                 backgroundImage:`url("${landingPage}")`
-            }}>
+            }}></div>
                 <div className="container">
                     
 

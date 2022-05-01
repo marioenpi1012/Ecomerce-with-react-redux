@@ -13,9 +13,9 @@ const Nav = () => {
                     <NavLink to='' >Narvick's Luxury Store</NavLink>
                 </div>
                 <div className="links" style={navOpened ? {display:"flex"} : {}}>
-                        <NavLink to='/shop' activeClassName='current'>Shop</NavLink>
-                        <NavLink to='/about' activeClassName='current' >About</NavLink>
-                        <NavLink to='/contact' activeClassName='current'>Contact</NavLink>
+                        <NavLink to='/shop'    onClick={()=>setNavOpened(!navOpened)} activeClassName='current'>Shop</NavLink>
+                        <NavLink to='/about'   onClick={()=>setNavOpened(!navOpened)} activeClassName='current' >About</NavLink>
+                        <NavLink to='/contact' onClick={()=>setNavOpened(!navOpened)} activeClassName='current'>Contact</NavLink>
                     </div>
                     
                 <div className="menu" >

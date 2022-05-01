@@ -189,16 +189,28 @@ $light-gray : rgba(250, 248, 248, 0.603);
         max-width: 250px;
         min-height: 350px;
         margin: 2rem 0;
-        background:$light-gray;
-        ;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         .image {
           img{
           height: 200px;
           width: 100%;
           max-width: 200px;
-          background-color: black;
+          display: block;
+          position: relative;
           }
-          :hover{
+          img:after{
+            content:"";
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index:-1;
+            background-color: black;
+            filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+          }
+          &:hover{
             transform: scale(1.2);
             transition: ease-in-out 1s;
           }
@@ -854,6 +866,8 @@ $light-gray : rgba(250, 248, 248, 0.603);
           justify-content: space-between;
           .title{
             font-size: 1.3rem;
+            max-width: 70%;
+            margin: 0 auto;
           }
           .text{
             font-size: .825rem;

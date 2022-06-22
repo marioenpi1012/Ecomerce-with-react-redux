@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { totalPrice } from './getPrice'
 import { itemsInCart } from './itemsInCart'
+import { motion } from 'framer-motion/dist/framer-motion'
 export const items = () =>{
     return true
 }
@@ -38,7 +39,12 @@ const AddedToCart = ({item, added, setAdded}) => {
                     Cart Subtotal ({itemsInCart(products)} {itemsInCart(products) <2 ? 'item' : 'items'}): {totalPrice(products)}
                 </div>
                 <NavLink to='/cart'>
-                    <input type="button" value="Go to Cart" />
+                    <motion.input 
+                        type="button" 
+                        value="Go to Cart"
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.9}}
+                        />
                 </NavLink>
             </div>
         </div>

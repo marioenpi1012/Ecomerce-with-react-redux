@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion/dist/framer-motion'
 const Footer = () => {
     return (
         <div className='Footer'>
@@ -33,7 +34,12 @@ const Footer = () => {
                         <form action="">
                             <label htmlFor="email">Email</label>
                             <input type="email" name="email" id="email" />
-                            <input type="submit" value='Submit' />
+                            <motion.input 
+                                type="submit" 
+                                value='Submit'
+                                whileHover={{scale:1.1}}
+                                whileTap={{scale:0.90}}
+                                />
                         </form>
                 </div>
             </div>

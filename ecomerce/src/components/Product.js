@@ -1,48 +1,47 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { NavLink} from 'react-router-dom'
-import { filter, selectedProduct } from '../actions'
-import { useState } from 'react'
-
-const Product = ({data}) => {
+import {useEffect} from 'react'
+import {useDispatch} from 'react-redux'
+import {NavLink, useLocation} from 'react-router-dom'
+import {selectedProduct} from '../actions'
+import {motion} from 'framer-motion/dist/framer-motion'
+const Product = ({product, loading}) => {
     const dispatch = useDispatch()
-    const Hover =(id) =>{
-        const btn = document.querySelector(`[data-button-id="${id}"]`)
-        btn.style.display = 'flex'
+    const location = useLocation()
+    const productVariants = {
+        hidden:{
+            opacity:0
+        },
+        start:{
+            opacity:1
+        },
+        end:{
+            opacity:0,
+            scale:1
+        }
     }
-    const notHover =(id) =>{
-        const btn = document.querySelector(`[data-button-id="${id}"]`)
-        btn.style.display = ''
-    }
-
-    const productsRender = data.map(product =>{
-        return (
-                <div className="item" key={product.id} id={product.id} onMouseOver={()=>Hover(product.id)} onMouseOut={()=>notHover(product.id)} >
-                    <div className="image">
-                        <img src={product.image} alt="image" width='200' height="200" /> 
-                    </div>
-                    <div className="title">{product.title}</div>
-                    <div className="price">${product.price}</div>
-                    <NavLink to='/viewing' >
-                        <input
-                        id='quickView' 
-                        type="button" 
-                        value="quick view" 
-                        data-button-id={product.id}  
-                        onClick={() => dispatch(selectedProduct(product.id))} 
-                        />
-                    </NavLink>
-                </div>
-        )
-    })
-    
     return (
-        <div className="Product">
-            <div className='container'>
-                <div className="items">
-                    {productsRender}
-                </div>
+        <motion.div
+            variants={productVariants}
+            initial="hidden"
+            animate="start"
+            exit="end"
+            className="item"
+            key={product.id}
+            id={product.id}>
+            <div className="image">
+                <img src={product.image} alt="image" width='200' height="200"/>
             </div>
-        </div>
+            <div className="title">{product.title}</div>
+            <div className="price">${product.price}</div>
+            <NavLink
+                to={{ pathname: '/viewing',state: {prevPath: location.pathname}}}>
+                <input
+                    id='quickView'
+                    type="button"
+                    value="quick view"
+                    data-button-id={product.id}
+                    onClick={() => dispatch(selectedProduct(product.id))}/>
+            </NavLink>
+        </motion.div>
     )
 }
 

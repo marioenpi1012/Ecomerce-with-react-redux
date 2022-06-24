@@ -199,15 +199,15 @@ html{
       text-transform: uppercase;
       cursor: pointer;
       position: relative;
-      
+
     }
   }
-    
+
 }
 @media (hover: hover){
   .item{
     a #quickView{
-      display: none !important; 
+      display: none !important;
     }
     &:hover, &:focus{
       transform: scale(1.2);
@@ -335,10 +335,12 @@ html{
   z-index: 300;
   overflow-x: hidden;
   .close{
-    text-align: right;
+    float: right;
+    text-align: center;
     margin: 1rem;
     font-size: 1.5rem;
     cursor: pointer;
+    width: 50px;
     a{
       text-decoration: none;
       color: $main-font-color;
@@ -387,6 +389,9 @@ html{
         margin: 1rem 0;
 
       }
+      .qty input{
+        width: 70%;
+      }
       .add-to-cart{
         -webkit-appearance: button;
         color: $main-font-color;
@@ -395,7 +400,7 @@ html{
         width: 86vw;
         border: none;
         text-transform: uppercase;
-        text-align: initial; 
+        text-align: initial;
         cursor: pointer;
       }
     }
@@ -496,7 +501,7 @@ html{
         max-width: 35rem;
         flex-grow: 1;
         width: 100%;
-        
+
       }
     }
     .item, .labels{
@@ -754,7 +759,7 @@ html{
   }
 }
 .Footer{
-  margin: 5rem 1rem;
+  // margin: 5rem 1rem;
   .container{
     display: grid;
     grid-template-columns:20% 1fr 25%;
@@ -835,6 +840,7 @@ html{
 .sliderWrapper{
   scroll-padding-top:0;
   margin: 5rem 0;
+  width: 100%;
   .topRated{
     font-size: 2rem;
     color: $main-font-color;
@@ -842,47 +848,59 @@ html{
     justify-content: center;
   }
   .Slider{
-    .container{
-      width: 100vw;
-      height: 80vh;
-      position: relative;
+    overflow-x: auto;
+    position: relative;
+    .next, .prev{
+      // top:calc(50% - 20px);
+      top:0;
+      position: absolute;
+      // border-radius: 50%;
+      // -moz-border-radius:50%;
+      // -webkit-border-radius:50%;
+      // width: 40px;
+      width: 4.5rem;
+      height: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
-      .next, .prev{
-        top:calc(50% - 20px);
-        position: absolute;
-        border-radius: 50%;
-        -moz-border-radius:50%;
-        -webkit-border-radius:50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        user-select: none;
-        justify-content: center;
-        cursor:pointer;
-        font-weight: bold;
-        font-size: 1.125rem;
-        z-index: 2;
-      }
-      .next{
-        right: 10px;
-      }
-      .prev{
-        left: 10px;
-      }
+      user-select: none;
+      justify-content: center;
+      cursor:pointer;
+      font-weight: bold;
+      font-size: 1.125rem;
+      z-index: 2;
+      background-color: red;
+    }
+    .next{
+      right: 0;
+      // right: 10px;
+    }
+    .prev{
+      // left: 10px;
+    }
+    .container{
+      // width: 70vw;
+      // height: 80vh;
+      // margin: 0 auto;
+      // position: relative;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      // height: 80vh;
+      width: 100vw;
+      display: flex;
+
       .item{
         @include item;
-        max-width: 240px;
-        max-height: 370px;
-        padding: 2rem 0;
-        position: absolute;
+        flex: 0 0 20%;
+        max-width: 20%;
+        aspect-ratio: 16 / 9;
+        padding: 2rem;
+        // position: absolute;
         transition: none;
         justify-content: unset;
         .title{
           margin: 1.5rem auto;
-          
+
         }
         .price{
           display: none;
@@ -1095,6 +1113,10 @@ html{
     }
   }
   .Footer{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .container{
       grid-template-columns: 1fr;
       text-align:center;

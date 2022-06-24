@@ -56,6 +56,7 @@ const Slider = ({data, children, activeSlide}) =>{
                 <div className='container'>
                     <AnimatePresence  initial={false} custom={direction} className="items" >
                     {data.map((product, i)=>(
+                    page === i &&
                     <motion.div 
                             className='item'
                             key={product.id}
@@ -99,9 +100,9 @@ const Slider = ({data, children, activeSlide}) =>{
                     </AnimatePresence>  
                     
                     
-                    </div>
                     <motion.div whileHover={{scale:1.1}} whileTap={{scale:0.9}} className='prev' onClick={()=>paginate(-1)} type="button"><FaLessThan /></motion.div>
                     <motion.div whileHover={{scale:1.1}} whileTap={{scale:0.9}} className='next' onClick={()=>paginate(1)} type="button"><FaGreaterThan /></motion.div>
+                </div>
                 </div>
     )
 }

@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 import {FaShoppingCart, FaBars} from 'react-icons/fa'
 import {BrowserRouter as Router, NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
@@ -10,12 +10,18 @@ const Nav = () => {
     const cartData = useSelector(state => state.cart.cart)
     const body = document.querySelector('body')
     const [shouldShowAction, setShouldShowActions] = useState(true)
+    const navRef = useRef()
     const [lastYpos, setLastYPos] = useState(0)
     useEffect(() => {
         const handleScroll = () => {
             const yPos = window.scrollY
             const isScrollingUp = yPos < lastYpos
-            setShouldShowActions(isScrollingUp)
+            console.log(navRef.current.clientHeight, {yPos},{isScrollingUp})
+            if(navRef.current.clientHeight > yPos){
+                setShouldShowActions(true)
+            }else{
+                setShouldShowActions(isScrollingUp)
+            }
             setLastYPos(yPos)
         }
         window.addEventListener('scroll', handleScroll, false)
@@ -70,6 +76,7 @@ const Nav = () => {
     return (
         <motion.nav
             className='Nav'
+            ref={navRef}
             initial={false, {opacity: 1}}
             animate={{
                 opacity: shouldShowAction

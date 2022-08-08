@@ -1,0 +1,38 @@
+@import '../../../style/Color.module';
+.Shop {
+    margin: 7rem 0;
+    .filter {
+        margin: 1rem;
+        select {
+            color: $main-font-color;
+            border: none;
+            height: 2.5rem;
+            width: 10rem;
+        }
+    }
+    .Product {
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            .items {
+                position: relative;
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(160px, 1fr));
+                grid-column-gap: 1rem;
+                grid-row-gap: 2rem;
+                justify-content: center;
+                .item {
+                    @include item;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    .Shop .Product{
+        margin:2.5rem 0;
+        .container .items .item a #quicView{
+            padding:1rem 2rem;
+        }
+    }
+}

@@ -2,9 +2,10 @@ import {useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {NavLink, useHistory, useLocation} from 'react-router-dom'
 import {addedToCart} from '../actions'
-import AddedToCart from './AddedToCart'
+import AddedToCart from './UI/AddedToCart'
 import {motion, AnimatePresence} from 'framer-motion/dist/framer-motion'
 import {useEffect} from 'react'
+import Style from '../style/SelectedProduct.module.scss'
 const SelectedProduct = () => {
     const selectedProduct = useSelector(state => state.cart.viewing)
     const productViewingFromCart = useSelector(state => state.cart.cart)
@@ -79,8 +80,7 @@ const SelectedProduct = () => {
             x: 0,
             opacity:1,
             transition: {
-                type: "spring",
-                stiffness: 100,
+                duration:1
             }
         },
         end: {
@@ -91,18 +91,16 @@ const SelectedProduct = () => {
     }
     return (
         <motion.div
-            className='SelectedProduct'
+            className={Style.SelectedProduct}
             variants={containerVariants}
             exit="exit">
-            <motion.div 
-                className="close"
-                whileHover={{scale:1.1}}
-                whileTap={{scale:0.9}}
+            <div 
+                className={Style.close}
                 >
                 <NavLink to={prevLocation}>X</NavLink>
-            </motion.div>
+            </div>
             <motion.div
-                className="container"
+                className={Style.container}
                 id="container"
                 style={added
                     ? {
@@ -113,7 +111,7 @@ const SelectedProduct = () => {
                 
                 exit='end'>
                 <motion.div
-                    className="image"
+                    className={Style.image}
                     variants={itemVariants}
                     initial="hidden"
                     animate="start"
@@ -122,16 +120,16 @@ const SelectedProduct = () => {
                     <img src={selectedProduct.image} alt="image"/>
                 </motion.div>
                 <motion.div 
-                    className="item-info"
+                    className={Style.itemInfo}
                     variants={itemVariants}
                     initial="hidden"
                     animate="start"
                     exit="end"
                     >
-                    <div className="title">{selectedProduct.title}</div>
-                    <div className="price">${selectedProduct.price}</div>
-                    <div className="description">{selectedProduct.description}</div>
-                    <div className="qty">
+                    <div className={Style.title}>{selectedProduct.title}</div>
+                    <div className={Style.price}>${selectedProduct.price}</div>
+                    <div className={Style.description}>{selectedProduct.description}</div>
+                    <div className={Style.qty}>
                         <input
                             type="number"
                             name="add-qty"
@@ -145,7 +143,7 @@ const SelectedProduct = () => {
                     <motion.input
                         type="submit"
                         value='Add To Cart'
-                        className="add-to-cart"
+                        className={Style.addToCart}
                         onClick={() => addedBtn(selectedProduct.id)}
                         whileHover={{
                             scale: 1.1

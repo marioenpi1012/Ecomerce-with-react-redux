@@ -5,14 +5,14 @@ import axios from 'axios'
 import {Switch, Route, useLocation} from 'react-router-dom';
 import {products} from './actions';
 import Nav from './components/Nav';
-import Home from './components/Home'
+import Home from './components/pages/Home/Home'
 import SelectedProduct from './components/SelectedProduct';
-import Products from './components/Products';
-import Cart from './components/Cart';
-import About from './components/About';
-import Contact from './components/Contact';
+import Products from './components/pages/Shop/Products';
+import Cart from './components/pages/Cart/Cart';
+import About from './components/pages/About/About';
+import Contact from './components/pages/Contact/Contact';
 import Footer from './components/Footer';
-import Skeleton from './components/Skeleton';
+import Skeleton from './components/UI/Skeleton';
 import {AnimatePresence} from 'framer-motion/dist/framer-motion'
 function App() {
     const dispatch = useDispatch()

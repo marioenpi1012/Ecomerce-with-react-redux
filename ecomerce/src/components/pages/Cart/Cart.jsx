@@ -1,9 +1,10 @@
     import React, {useEffect, useState} from 'react'
     import {useDispatch, useSelector} from 'react-redux'
-    import {changeQty, removedFromCart} from '../actions'
+    import {changeQty, removedFromCart} from '../../../actions'
     import {NavLink, useLocation} from 'react-router-dom'
     import {motion, AnimatePresence, usePresence} from 'framer-motion/dist/framer-motion'
-    import {totalPrice} from './getPrice'
+    import {totalPrice} from '../../../hooks/getPrice/getPrice'
+    import Style from './Cart.module.scss'
     const Cart = () => {
     const products = useSelector(state => state.cart.cart)
     const total = useSelector(state => state.cart.total)
@@ -73,11 +74,9 @@
         opacity: 1,
         x: 0,
         transition: {
-            type: "spring",
-            mass: 0.4,
-            damping: 8,
             when: "beforeChildren",
-            staggerChildren: 0.4
+            staggerChildren: 0.4,
+            duration:1,
         }
     },
     end: {
@@ -94,7 +93,7 @@
     return (
 
     <motion.div
-        className='Cart'
+        className={Style.Cart}
         key='Cart'
         variants={containerVariants}
         initial="hidden"
@@ -103,16 +102,16 @@
         {
             products.length > 0
                 ? (
-                    <div className="container">
-                        <div className="labels">
-                            <div className="title">Title</div>
-                            <div className="quantity">Quantity</div>
-                            <div className="price">Price</div>
+                    <div className={Style.container}>
+                        <div className={Style.labels}>
+                            <div className={Style.title}>Title</div>
+                            <div className={Style.quantity}>Quantity</div>
+                            <div className={Style.price}>Price</div>
                         </div>
                             <motion.div
                                 key="itemsAnimation"
                                 id="itemsAnimation"
-                                className="items"
+                                className={Style.items}
                                 variants={itemsVariants}
                                 transition={{
                                     opacity: {
@@ -125,23 +124,23 @@
                                 >
                                 {
                                     products.map(product => (
-                                        <motion.div className="item" 
+                                        <motion.div className={Style.item} 
                                             key={product.id} 
                                             variants={variants}
                                             >
-                                            <div className="remove">
+                                            <div className={Style.remove}>
                                                 <input
                                                     type="button"
                                                     value="X"
                                                     onClick={() => dispatch(removedFromCart(product.id))}/>
                                             </div>
-                                            <div className="info">
-                                                <div className="image">
+                                            <div className={Style.info}>
+                                                <div className={Style.image}>
                                                     <img src={product.image} alt=""/>
                                                 </div>
-                                                <div className="title">{product.title}</div>
+                                                <div className={Style.title}>{product.title}</div>
                                             </div>
-                                            <div className="qty">
+                                            <div className={Style.qty}>
                                                 <input
                                                     type="number"
                                                     name="qty"
@@ -152,16 +151,15 @@
                                                     data-id={product.id}
                                                     onChange={() => dispatch(changeQty(product.id))}/>
                                             </div>
-                                            <div className="price">${(product.price).toFixed(2)}</div>
+                                            <div className={Style.price}>${(product.price).toFixed(2)}</div>
                                         </motion.div>
                                     ))
                                 }
-
-                                <div className="subtotal">Subtotal: {totalPrice(products)}
+                                <div className={Style.subtotal}>Subtotal: {totalPrice(products)}
                                 </div>
-                                <div className="checkout">
+                                <div className={Style.checkout}>
                                     <motion.input 
-                                        className='checkout-btn' 
+                                        className={Style.checkoutBtn} 
                                         type="button" 
                                         value='checkout'
                                         whileHover={{scale:1.1}}
@@ -172,7 +170,7 @@
                     </div>
                 )
                 : (
-                    <div className='msg'>The cart is empty, continue 
+                    <div className={Style.msg}>The cart is empty, continue 
                         <NavLink to='/shop'>Shopping</NavLink>.</div>
                 )
         }

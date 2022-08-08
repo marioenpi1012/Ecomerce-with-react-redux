@@ -2,9 +2,10 @@ import {useRef, useState} from 'react'
 import {FaShoppingCart, FaBars} from 'react-icons/fa'
 import {BrowserRouter as Router, NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import {itemsInCart} from './itemsInCart'
+import {itemsInCart} from '../hooks/itemsInCart/itemsInCart'
 import {motion, useCycle} from 'framer-motion/dist/framer-motion'
 import {useEffect} from 'react'
+import Style from '../style/Nav.module.scss'
 const Nav = () => {
     const [navOpened, setNavOpened] = useCycle(false, true)
     const cartData = useSelector(state => state.cart.cart)
@@ -16,7 +17,6 @@ const Nav = () => {
         const handleScroll = () => {
             const yPos = window.scrollY
             const isScrollingUp = yPos < lastYpos
-            console.log(navRef.current.clientHeight, {yPos},{isScrollingUp})
             if(navRef.current.clientHeight > yPos){
                 setShouldShowActions(true)
             }else{
@@ -28,8 +28,9 @@ const Nav = () => {
         return() => {
             window.removeEventListener('scroll', handleScroll, false)
         }
+
     }, [lastYpos])
-    if (navOpened) {
+    if (navOpened & window.innerWidth <= 769) {
         body.style.overflowY = 'hidden'
     } else {
         body.style.overflowY = 'auto'
@@ -75,9 +76,9 @@ const Nav = () => {
 
     return (
         <motion.nav
-            className='Nav'
+            className={Style.Nav}
             ref={navRef}
-            initial={false, {opacity: 1}}
+            initial={[false, {opacity: 1}]}
             animate={{
                 opacity: shouldShowAction
                     ? 1
@@ -88,13 +89,14 @@ const Nav = () => {
                     duration: 0.2
                 }
             }}>
-            <div className="logo">
+            <div className={Style.logo}>
                 <NavLink to=''>Narvick's Luxury Store</NavLink>
             </div>
             <motion.ul
                 className={navOpened
-                    ? "links open"
-                    : "links"}
+                    ? `${Style.links} ${Style.open}`
+                    : `${Style.links}`
+                }
                 variants={ulVariants}
                 animate={navOpened
                     ? "open"
@@ -107,7 +109,7 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/shop' onClick={() => setNavOpened()} activeClassName="current">shop</NavLink>
+                    <NavLink to='/shop' onClick={() => setNavOpened()} activeClassName={Style.current}>shop</NavLink>
                 </motion.li>
                 <motion.li
                     variants={variants}
@@ -117,7 +119,7 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/about' onClick={() => setNavOpened()} activeClassName="current">about</NavLink>
+                    <NavLink to='/about' onClick={() => setNavOpened()} activeClassName={Style.current}>about</NavLink>
                 </motion.li>
                 <motion.li
                     variants={variants}
@@ -127,26 +129,27 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/contact' onClick={() => setNavOpened()} activeClassName="current">contact</NavLink>
+                    <NavLink to='/contact' onClick={() => setNavOpened()} activeClassName={Style.current}>contact</NavLink>
                 </motion.li>
             </motion.ul>
             <div
                 className={navOpened
-                    ? "menu open"
-                    : "menu"}>
+                    ? `${Style.menu} ${Style.open}`
+                    : `${Style.menu}`
+                    }
+                >
                 <motion.div 
-                    className="cart"
+                    className={Style.cart}
                     whileHover={{scale:1.1}}
                     whileTap={{scale:0.9}}
+                    data-items={itemsInCart(cartData)}
                     >
                     <NavLink to='/cart'><FaShoppingCart/>
                     </NavLink>
-                    <span>{itemsInCart(cartData)}</span>
                 </motion.div>
-                <div className="mobileMenu" onClick={() => setNavOpened()}>
-                    <div className="burgerMenu"></div>
+                <div className={Style.mobileMenu} onClick={() => setNavOpened()}>
+                    <div className={Style.burgerMenu}></div>
                 </div>
-
             </div>
 
         </motion.nav>

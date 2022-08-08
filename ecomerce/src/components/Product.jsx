@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import {NavLink, useLocation} from 'react-router-dom'
 import {selectedProduct} from '../actions'
 import {motion} from 'framer-motion/dist/framer-motion'
+import Style from '../style/Product.module.scss'
 const Product = ({product, loading}) => {
     const dispatch = useDispatch()
     const location = useLocation()
@@ -24,14 +25,14 @@ const Product = ({product, loading}) => {
             initial="hidden"
             animate="start"
             exit="end"
-            className="item"
+            className={Style.item}
             key={product.id}
             id={product.id}>
-            <div className="image">
+            <div className={Style.image}>
                 <img src={product.image} alt="image" width='200' height="200"/>
             </div>
-            <div className="title">{product.title}</div>
-            <div className="price">${product.price}</div>
+            <div className={Style.title}>{product.title}</div>
+            <div className={Style.price}>${product.price}</div>
             <NavLink
                 to={{ pathname: '/viewing',state: {prevPath: location.pathname}}}>
                 <input

@@ -1,0 +1,30 @@
+@import './Color.module';
+.skeletonShop {
+    margin: 7rem 0;
+    .skeletonFilter {
+        margin: 1rem;
+        height: 2.5rem;
+        width: 10rem;
+        background-color: $main-font-color;
+        animation: skeleton 1s ease infinite alternate;
+    }
+    .skeletonProduct {
+        margin: 2.5rem 0;
+        .skeletonContainer {
+            width: 90%;
+            margin: auto;
+            .skeletonItems {
+                display: grid;
+                grid-template-columns: repeat(auto-fit,minmax(160px, 1fr));
+                grid-column-gap: 1rem;
+                grid-row-gap: 2rem;
+                .skeletonItem {
+                    @include item;
+                    background-color: $main-font-color;
+                    animation: skeleton 1s ease infinite alternate;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

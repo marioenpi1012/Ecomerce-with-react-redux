@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/Ecomerce-with-react-redux/static/css/main.b25f8d57.chunk.css",
-    "main.js": "/Ecomerce-with-react-redux/static/js/main.8168c1fc.chunk.js",
-    "main.js.map": "/Ecomerce-with-react-redux/static/js/main.8168c1fc.chunk.js.map",
-    "runtime-main.js": "/Ecomerce-with-react-redux/static/js/runtime-main.036a8ea7.js",
-    "runtime-main.js.map": "/Ecomerce-with-react-redux/static/js/runtime-main.036a8ea7.js.map",
-    "static/js/2.0ade3c16.chunk.js": "/Ecomerce-with-react-redux/static/js/2.0ade3c16.chunk.js",
-    "static/js/2.0ade3c16.chunk.js.map": "/Ecomerce-with-react-redux/static/js/2.0ade3c16.chunk.js.map",
-    "static/js/3.b3c03944.chunk.js": "/Ecomerce-with-react-redux/static/js/3.b3c03944.chunk.js",
-    "static/js/3.b3c03944.chunk.js.map": "/Ecomerce-with-react-redux/static/js/3.b3c03944.chunk.js.map",
+    "main.css": "/Ecomerce-with-react-redux/static/css/main.caaedc48.chunk.css",
+    "main.js": "/Ecomerce-with-react-redux/static/js/main.ba7a3ec8.chunk.js",
+    "main.js.map": "/Ecomerce-with-react-redux/static/js/main.ba7a3ec8.chunk.js.map",
+    "runtime-main.js": "/Ecomerce-with-react-redux/static/js/runtime-main.e849e966.js",
+    "runtime-main.js.map": "/Ecomerce-with-react-redux/static/js/runtime-main.e849e966.js.map",
+    "static/css/2.5c613181.chunk.css": "/Ecomerce-with-react-redux/static/css/2.5c613181.chunk.css",
+    "static/js/2.add9b015.chunk.js": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js",
+    "static/js/2.add9b015.chunk.js.map": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js.map",
+    "static/js/3.c949cb96.chunk.js": "/Ecomerce-with-react-redux/static/js/3.c949cb96.chunk.js",
+    "static/js/3.c949cb96.chunk.js.map": "/Ecomerce-with-react-redux/static/js/3.c949cb96.chunk.js.map",
     "index.html": "/Ecomerce-with-react-redux/index.html",
-    "static/css/main.b25f8d57.chunk.css.map": "/Ecomerce-with-react-redux/static/css/main.b25f8d57.chunk.css.map",
-    "static/js/2.0ade3c16.chunk.js.LICENSE.txt": "/Ecomerce-with-react-redux/static/js/2.0ade3c16.chunk.js.LICENSE.txt",
+    "static/css/2.5c613181.chunk.css.map": "/Ecomerce-with-react-redux/static/css/2.5c613181.chunk.css.map",
+    "static/css/main.caaedc48.chunk.css.map": "/Ecomerce-with-react-redux/static/css/main.caaedc48.chunk.css.map",
+    "static/js/2.add9b015.chunk.js.LICENSE.txt": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js.LICENSE.txt",
     "static/media/designers.0ed6b744.jpg": "/Ecomerce-with-react-redux/static/media/designers.0ed6b744.jpg",
     "static/media/landingPage.4c7c9b4f.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4f.png",
     "static/media/logo.6e887384.jpg": "/Ecomerce-with-react-redux/static/media/logo.6e887384.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.036a8ea7.js",
-    "static/js/2.0ade3c16.chunk.js",
-    "static/css/main.b25f8d57.chunk.css",
-    "static/js/main.8168c1fc.chunk.js"
+    "static/js/runtime-main.e849e966.js",
+    "static/css/2.5c613181.chunk.css",
+    "static/js/2.add9b015.chunk.js",
+    "static/css/main.caaedc48.chunk.css",
+    "static/js/main.ba7a3ec8.chunk.js"
   ]
 }

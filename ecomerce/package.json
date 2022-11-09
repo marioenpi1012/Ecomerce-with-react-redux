@@ -2,7 +2,7 @@
   "name": "ecomerce",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marioenpi1012.github.io/Photographer-Website/",
+  "homepage": "https://marioenpi1012.github.io/Ecomerce-with-react-redux/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",

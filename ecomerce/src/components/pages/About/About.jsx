@@ -1,8 +1,8 @@
 import React from 'react'
 import Logo from '../../../assets/images/logo.jpg'
 import Designer from '../../../assets/images/designers.jpg'
-import { motion } from 'framer-motion/dist/framer-motion'
-
+import { motion } from 'framer-motion'
+import AnimatedComponent from '../../UI/AnimatedComponent'
 const About = () => {
     const variants = {
         offscreen:{
@@ -15,7 +15,7 @@ const About = () => {
         }
     }
     return (
-        <div className='About'>
+        <AnimatedComponent className='About'>
             <div className="header">Our Story</div>
             <div className="container">
                 <motion.div 
@@ -59,7 +59,7 @@ const About = () => {
                 >
                 </motion.div>
             </div>
-        </div>
+        </AnimatedComponent>
     )
 }
 

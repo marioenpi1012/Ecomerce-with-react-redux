@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {NavLink, useHistory, useLocation} from 'react-router-dom'
 import {addedToCart} from '../actions'
 import AddedToCart from './UI/AddedToCart'
-import {motion, AnimatePresence} from 'framer-motion/dist/framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 import {useEffect} from 'react'
 import Style from '../style/SelectedProduct.module.scss'
 const SelectedProduct = () => {
@@ -97,7 +97,7 @@ const SelectedProduct = () => {
             <div 
                 className={Style.close}
                 >
-                <NavLink to={prevLocation}>X</NavLink>
+                <NavLink to={-1}>X</NavLink>
             </div>
             <motion.div
                 className={Style.container}

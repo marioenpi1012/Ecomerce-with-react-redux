@@ -6,8 +6,9 @@ import Product from '../../Product'
 import landingPage from '../../../assets/images/landingPage.png'
 import { FaArrowDown } from "react-icons/fa";
 import Slider from '../../UI/Slider'
-import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion'
 import Style from './Home.module.scss'
+import AnimatedComponent from '../../UI/AnimatedComponent'
 const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter(item => Number(item.rating.rate) > 3.5)
@@ -48,14 +49,8 @@ const Home = () => {
     }
     
     return (
-        <motion.div 
-            className={Style.Home}
-            variants={containerVariants}
-            initial="hidden"
-            animate="start"
-            exit="exit"
-            >
-            <div className={Style.landing}>
+        <AnimatedComponent className={Style.Home} >
+            <section className={Style.landing}>
                 <div className={Style.bgImage}  style={{
                 backgroundImage:`url("${landingPage}")`
             }}></div>
@@ -85,9 +80,9 @@ const Home = () => {
                         </motion.div>
                     </Link>
                 </div>
-            </div>
+            </section>
             <div id='topRated' ></div>
-            <div className={Style.sliderWrapper}>
+            <section className={Style.sliderWrapper}>
                 <motion.div className={Style.topRated}
                     initial="offscreen"
                     whileInView="onscreen"
@@ -97,9 +92,10 @@ const Home = () => {
                     <motion.div variants={variants}>Top Rated</motion.div>
                 </motion.div>
                 <Slider data={highestRated}/>
-            </div>
+            </section>
             
-        </motion.div>
+        </AnimatedComponent>
+
         
     )
 }

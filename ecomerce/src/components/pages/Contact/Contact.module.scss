@@ -1,164 +1,140 @@
 @import '../../../style/Color.module';
 .Contact {
-    .header {
-        font-size: 3rem;
-        color: $main-font-color;
-        text-transform: uppercase;
-        font-weight: 500;
-        margin: 5rem 0;
-        text-align: center;
-        letter-spacing: 5px;
-    }
+    background-color: $white;
     .container {
-        background-color: $secondary-font-color;
-        .miniHeader {
-            font-size: 1.5rem;
-            color: $main-font-color;
-            font-weight: 500;
-            text-align: center;
-            padding: 5rem 0 2rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        .line {
-            width: 2%;
-            margin: 0 auto;
-            border-bottom: 3px solid $main-font-color;
-        }
-        .info {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            margin: 5rem 0 2rem;
-            text-align: center;
-            .title {
-                font-size: 1.5rem;
-                text-transform: capitalize;
-                font-weight: 400;
-                color: $main-font-color;
-                font-style: italic;
-            }
-            .text {
-                font-size: 1.25rem;
-                color: $main-font-color;
-                font-weight: 100;
-                max-width: 55%;
-                text-align: center;
-                padding: 1rem 0;
-                margin: 0 auto;
-                width: 100%;
-            }
-        }
-        .inquiries {
-            text-align: center;
-            .miniHeader {
-                text-transform: capitalize;
-                padding: 1rem 0;
-                font-style: italic;
-                font-weight: 400;
-            }
-            p {
-                font-size: 1.1rem;
-                color: $main-font-color;
-                max-width: 50%;
-                margin: 0 auto 3rem;
-                font-weight: 100;
-            }
+        position:relative;
+        max-width: 119rem;
+        margin: 0 auto;
+        padding-top:10rem;
+        padding-bottom:5rem;
+        padding-left:15rem;
+        padding-right:5rem;
+        &::after{
+            content: '';
+            position:absolute;
+            top:35%;
+            left: 5rem;
+            height: 30%;
+            width: 0.09rem;
+            background-color:$black;
         }
         .form {
+            .header {
+                font-size: 4.5rem;
+                color: $main-font-color;
+                font-weight: 600;
+                margin: 5rem 0;
+                text-align: start;
+            }
             form {
-                display: grid;
-                max-width: 80%;
-                margin: 0 auto;
-                .fullName > #last-name {
-                    grid-row-start: 1;
-                    grid-column-start: 2;
-                }
-                .fullName {
+                display: flex;
+                flex-direction:column;
+                gap: 3rem;
+                .personalInformation{
                     display: grid;
-                    grid-gap: 0 2rem;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    align-items:center;
+                    gap: 3rem;
+                    .fullName, .email {
+                        display: grid;
+                        grid-gap: 0 2rem;
+                    }
+                }
+                .message{
+                    display: flex;
+                    flex-direction: column;
                 }
                 label {
-                    font-size: 1rem;
-                    text-transform: capitalize;
+                    font-size: 1.25rem;
                     color: $main-font-color;
-                    font-weight: 300;
+                    font-weight: 400;
                 }
-                input,
-                textarea {
+                textarea,
+                input:not(input[type='button']){
                     border: none;
-                    border-bottom: 1px solid $main-font-color;
-                    background-color: inherit;
+                    background-color: $light-gray;
                     margin: 1rem 0;
                     outline: none;
+                    border: none;
+                    padding: 0.75rem 2rem;
+                    font-size: 1rem;
+                    color: $black;
+                    &:active, &:focus{
+                        border: 1px solid $black;
+                    }
+                }
+                input:not(input[type='button']){
+                    height:100%;
                 }
                 textarea {
-                    height: 50px;
+                    height: 10rem;
                 }
             }
             input:-webkit-autofill,
             input:-webkit-autofill:active,
             input:-webkit-autofill:focus,
             input:-webkit-autofill:hover {
-                -webkit-box-shadow: 0 0 0 30px $secondary-font-color inset !important;
-                -moz-box-shadow: 0 0 0 30px $secondary-font-color inset !important;
-                box-shadow: 0 0 0 30px $secondary-font-color inset !important;
+                -webkit-box-shadow: 0 0 0 50px $light-gray inset !important;
+                -moz-box-shadow: 0 0 0 50px $light-gray inset !important;
+                box-shadow: 0 0 0 50px $light-gray inset !important;
             }
-            input[type='submit'] {
+            input[type='button'] {
                 -webkit-appearance: button;
-                color: $main-font-color;
-                border: 1px solid $main-font-color;
+                -moz-appearance: button;
+                appearance: button;
+                background-color: $main-font-color;
+                color: $white;
                 text-align: center;
-                margin: 3rem auto;
-                padding: 1rem 10rem;
+                margin: 5rem 0;
                 cursor: pointer;
-                &:active,
-                &:focus,
-                &:hover {
-                    background-color: $main-font-color;
-                    color: $secondary-font-color;
-                }
+                height: 3.5rem;
+                width: 30vw;
+                font-size: 1rem;
             }
         }
     }
 }
-@media screen and (max-width:600px) {
-    .Contact {
-        .header {
-            font-size: 2rem;
+@media screen and (max-width:1024px){
+    .Contact .container{
+        padding-left:10rem;
+        padding-right:3.3rem;
+        padding-top:5rem;
+        padding-bottom: 0;
+        &::after{
+            left: 3rem;
         }
-        .container {
-            .miniHeader {
-                font-size: 1.3rem;
+        .form .header{
+            font-size: 4rem;
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .Contact .container .form{
+        .header{
+            font-size: 2.5rem;
+            margin: 2.5rem 0;
+        }
+        form input[type='button']{
+            margin:3rem 0;
+            
+        }   
+    }
+}
+@media screen and (max-width:600px) {
+    .Contact .container{
+        padding-right: 2rem;
+        padding-left:2.5rem;
+        &::after{
+            content: none;
+        }
+        .form {
+            .header{
+                font-size: 1.75rem;
             }
-            .line {
-                width: 10%;
-            }
-            .info {
-                .contact,
-                .hours,
-                .store {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    .title {
-                        font-size: 1.3rem;
-                        max-width: 70%;
-                        margin: 0 auto;
-                    }
-                    .text {
-                        font-size: 0.825rem;
-                        font-weight: 200;
-                        max-width: 80%;
-                    }
-                }
-            }
-            .inquiries p {
-                font-size: 0.8rem;
-                max-width: 70%;
-            }
-            .form form {
-                margin: 0 1rem;
-                max-width: 100%;
+            form input[type='button']{
+                height: 2rem;
+                margin: 0;
+                margin-bottom: 2rem;
             }
         }
     }

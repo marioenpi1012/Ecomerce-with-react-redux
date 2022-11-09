@@ -2,7 +2,7 @@
     import {useDispatch, useSelector} from 'react-redux'
     import {changeQty, removedFromCart} from '../../../actions'
     import {NavLink, useLocation} from 'react-router-dom'
-    import {motion, AnimatePresence, usePresence} from 'framer-motion/dist/framer-motion'
+    import {motion, AnimatePresence, usePresence} from 'framer-motion'
     import {totalPrice} from '../../../hooks/getPrice/getPrice'
     import Style from './Cart.module.scss'
     const Cart = () => {

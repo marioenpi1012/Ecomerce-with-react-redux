@@ -1,9 +1,9 @@
 import {useRef, useState} from 'react'
 import {FaShoppingCart, FaBars} from 'react-icons/fa'
-import {BrowserRouter as Router, NavLink} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {itemsInCart} from '../hooks/itemsInCart/itemsInCart'
-import {motion, useCycle} from 'framer-motion/dist/framer-motion'
+import {motion, useCycle} from 'framer-motion'
 import {useEffect} from 'react'
 import Style from '../style/Nav.module.scss'
 const Nav = () => {
@@ -109,7 +109,7 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/shop' onClick={() => setNavOpened()} activeClassName={Style.current}>shop</NavLink>
+                    <NavLink to='/shop' onClick={() => setNavOpened()}>shop</NavLink>
                 </motion.li>
                 <motion.li
                     variants={variants}
@@ -119,7 +119,7 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/about' onClick={() => setNavOpened()} activeClassName={Style.current}>about</NavLink>
+                    <NavLink to='/about' onClick={() => setNavOpened()} >about</NavLink>
                 </motion.li>
                 <motion.li
                     variants={variants}
@@ -129,7 +129,7 @@ const Nav = () => {
                     whileTap={{
                         scale: 0.95
                     }}>
-                    <NavLink to='/contact' onClick={() => setNavOpened()} activeClassName={Style.current}>contact</NavLink>
+                    <NavLink to='/contact' onClick={() => setNavOpened()} >contact</NavLink>
                 </motion.li>
             </motion.ul>
             <div

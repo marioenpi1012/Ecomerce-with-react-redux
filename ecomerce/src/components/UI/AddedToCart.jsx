@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { totalPrice } from '../../hooks/getPrice/getPrice'
 import { itemsInCart } from '../../hooks/itemsInCart/itemsInCart'
-import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion'
 import Style from '../../style/AddedToCart.module.scss'
 export const items = () =>{
     return true

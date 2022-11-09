@@ -420,10 +420,12 @@ html {
 }
 
 .SelectedProduct .close {
-  text-align: right;
+  float: right;
+  text-align: center;
   margin: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
+  width: 50px;
 }
 
 .SelectedProduct .close a {
@@ -494,6 +496,10 @@ html {
 .SelectedProduct .container .item-info .description, .SelectedProduct .container .item-info .qty, .SelectedProduct .container .item-info .add-to-cart {
   font-size: 1rem;
   margin: 1rem 0;
+}
+
+.SelectedProduct .container .item-info .qty input {
+  width: 70%;
 }
 
 .SelectedProduct .container .item-info .add-to-cart {
@@ -989,10 +995,6 @@ html {
   color: #818181;
 }
 
-.Footer {
-  margin: 5rem 1rem;
-}
-
 .Footer .container {
   display: -ms-grid;
   display: grid;
@@ -1097,6 +1099,7 @@ html {
 .sliderWrapper {
   scroll-padding-top: 0;
   margin: 5rem 0;
+  width: 100%;
 }
 
 .sliderWrapper .topRated {
@@ -1110,29 +1113,16 @@ html {
           justify-content: center;
 }
 
-.sliderWrapper .Slider .container {
-  width: 100vw;
-  height: 80vh;
+.sliderWrapper .Slider {
+  overflow-x: auto;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.sliderWrapper .Slider .container .next, .sliderWrapper .Slider .container .prev {
-  top: calc(50% - 20px);
+.sliderWrapper .Slider .next, .sliderWrapper .Slider .prev {
+  top: 0;
   position: absolute;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 4.5rem;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1150,14 +1140,18 @@ html {
   font-weight: bold;
   font-size: 1.125rem;
   z-index: 2;
+  background-color: red;
 }
 
-.sliderWrapper .Slider .container .next {
-  right: 10px;
+.sliderWrapper .Slider .next {
+  right: 0;
 }
 
-.sliderWrapper .Slider .container .prev {
-  left: 10px;
+.sliderWrapper .Slider .container {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .sliderWrapper .Slider .container .item {
@@ -1189,10 +1183,12 @@ html {
   transition: transform 450ms;
   transition: transform 450ms, -webkit-transform 450ms;
   background-color: #ffffff;
-  max-width: 240px;
-  max-height: 370px;
-  padding: 2rem 0;
-  position: absolute;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  max-width: 20%;
+  aspect-ratio: 16 / 9;
+  padding: 2rem;
   -webkit-transition: none;
   transition: none;
   -webkit-box-pack: unset;
@@ -1514,6 +1510,18 @@ html {
     margin: 0 1rem;
     max-width: 100%;
   }
+  .Footer {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .Footer .container {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -1537,4 +1545,4 @@ html {
     grid-auto-columns: 40%;
   }
 }
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=slider.css.map */

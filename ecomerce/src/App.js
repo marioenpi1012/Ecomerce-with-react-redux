@@ -39,7 +39,7 @@ function App() {
 
     return (
         <> 
-        < Nav /> 
+        <Nav /> 
         <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={location.pathname}>
                 <Route path='/' exact>
@@ -47,7 +47,7 @@ function App() {
                 <Route path='/shop'>
                     {
                         isLoading
-                            ? <Skeleton data={fetchProducts}/>
+                            ? <Skeleton />
                             : <Products/>
 
                     }

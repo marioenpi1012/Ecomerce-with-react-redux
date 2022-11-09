@@ -1,0 +1,86 @@
+@import './Color.module';
+.cartPreview {
+    position: absolute;
+    display: none;
+    max-height: 75vh;
+    height: 100%;
+    top: -4rem;
+    right: 0;
+    background: $item-background-color;
+    box-shadow: -10px 5px 20px $secondary-font-color;
+    z-index: 1;
+    max-width: 25vw;
+    width: 100%;
+    animation: 3s ease-in-out;
+    .titles {
+        align-items: center;
+        .controlBtn {
+            display: flex;
+            justify-content: space-between;
+            margin: auto 1rem;
+            align-items: center;
+            a {
+                color: $main-font-color;
+                text-decoration: none;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        height: 50%;
+        background: $item-background-color;
+        .addedItem {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: space-around;
+            .itemImg {
+                img {
+                    width: 125px;
+                    height: 50%;
+                }
+            }
+            .addedItemInfo {
+                font-size: 1.5rem;
+                color: $main-font-color;
+                display: flex;
+                height: 50%;
+                margin: 0 1rem;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+        }
+    }
+    .cartContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .cartInfo {
+            font-size: 1.1rem;
+            text-align: center;
+            width: 70%;
+        }
+        a input {
+            width: 10rem;
+            height: 3rem;
+            margin: 2rem 0;
+            cursor: pointer;
+            border-radius: 5%;
+            -webkit-border-radius: 5%;
+            -moz-border-radius: 5%;
+            border: none;
+            font-size: 1.25rem;
+            color: $main-font-color;
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .cartPreview{
+        max-width: 70vw;
+        margin-bottom:3rem;
+    }
+}

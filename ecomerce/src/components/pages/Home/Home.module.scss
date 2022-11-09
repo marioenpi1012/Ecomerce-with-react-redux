@@ -1,0 +1,91 @@
+@import '../../../style/Color.module';
+
+.Home {
+    overflow: hidden;
+    // padding: 1rem 0;
+    .landing {
+        height: 100vh;
+        overflow: hidden;
+        // min-height: 100vh;
+        position: relative;
+        .bgImage {
+            height: 100%;
+            position: relative;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            top: 5rem;
+        }
+        @supports (-webkit-touch-callout:none) {
+            .bgImage {
+                background: center top no-repeat scroll;
+                background-size: auto 100%;
+            }
+        }
+        .container {
+            position: absolute;
+            top: 35%;
+            left: 15%;
+            width: 70%;
+            text-align: center;
+            background: #c4c4c463;
+            box-shadow: 10px 10px 20px $main-font-color;
+            .text {
+                font-size: 2rem;
+                font-weight: 600;
+                color: $main-font-color;
+                p {
+                    width: 70%;
+                    margin: 1rem auto;
+                    text-align: center;
+                }
+            }
+            .btn a input{
+                background-color: $main-font-color;
+                color: $item-background-color;
+                width: 10rem;
+                height: 3rem;
+                margin: 1.5rem 0;
+                cursor: pointer;
+                border: none;
+                border-radius: 5%;
+                -moz-border-radius: 5%;
+                -webkit-border-radius: 5%;
+            }
+        }
+        .arrow {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            font-size: 2rem;
+            cursor: pointer;
+            a {
+                color: $main-font-color;
+            }
+        }
+    }
+    .sliderWrapper{
+        scroll-padding-top:0;
+        margin:5rem 0;
+        .topRated {
+            margin: 0 1.5rem;
+            font-size: 2rem;
+            color: $main-font-color;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    
+}
+
+@media screen and (max-width:600px){
+    .Home {
+        .landing .container{
+            top:25%;
+            .text{
+                font-size:1.25rem;
+            }
+        }
+    }
+}

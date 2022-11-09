@@ -1,6 +1,6 @@
 import React from 'react'
-import Logo from '../images/logo.jpg'
-import Designer from '../images/designers.jpg'
+import Logo from '../../../assets/images/logo.jpg'
+import Designer from '../../../assets/images/designers.jpg'
 import { motion } from 'framer-motion/dist/framer-motion'
 
 const About = () => {

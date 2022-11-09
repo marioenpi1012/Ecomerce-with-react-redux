@@ -1,0 +1,184 @@
+@import './Color.module';
+.Nav {
+    display: flex;
+    width: 100vw;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-content: center;
+    align-items: center;
+    line-height: 50px;
+    background-color: $background-color;
+    z-index: 10;
+    a {
+        color: $main-font-color;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .links a,
+    .logo,
+    .menu,
+    .menu .cart a {
+        z-index: 1000;
+        text-transform: capitalize;
+    }
+    .links {
+        width: 75%;
+        display: flex;
+        justify-content: flex-end;
+        li {
+            list-style: none;
+            opacity: 1;
+            transform: none;
+            margin: 0 1rem;
+            &:hover a {
+                color: $gray;
+            }
+        }
+        .current {
+            color: $gray;
+        }
+    }
+    .menu {
+        margin-right: 2rem;
+        .cart {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &::after {
+                content: attr(data-items);
+                position: absolute;
+                top: -0.2rem;
+                right: -0.75rem;
+                color: black;
+                width: 1.5rem;
+                height: 1.5rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .Nav .links li {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+@media screen and (max-width:1024px) {
+    .Nav {
+        padding: 0.75rem 1.5rem;
+        .links {
+            width: 65%;
+        }
+    }
+}
+@media screen and (max-width:768px) {
+    .Nav {
+        align-items: unset;
+        opacity: 0;
+        padding: 0.5rem 1rem;
+        .links {
+            display: flex;
+            position: absolute;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            width: 100%;
+            color: $main-font-color;
+            background-color: $background-color;
+            clip-path: circle(100px at 90% -10%);
+            -webkit-clip-path: circle(100px at 90% -10%);
+            transition: all 0.8s ease-in;
+            z-index: 200;
+            li {
+                margin: 1rem 0;
+                list-style: none;
+                a {
+                    padding: 0 0.5rem;
+                    font-size: 2rem;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .open {
+            clip-path: circle(1000px at 90% -10%);
+            -webkit-clip-path: circle(1000px at 90% -10%) !important;
+            a {
+                opacity: 1 !important;
+            }
+        }
+        .menu.open .burgerMenu {
+            background-color: transparent;
+            &::before {
+                transform: rotate(45deg);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+        .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in;
+            cursor: pointer;
+            line-height: 2rem;
+            .mobileMenu {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+            }
+            .burgerMenu {
+                width: 30px;
+                height: 3px;
+                background-color: $main-font-color;
+                margin-left: 1rem;
+                transition: all 0.5s ease-in-out;
+                &::after,
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: $main-font-color;
+                    width: 30px;
+                    height: 3px;
+                    transition: all 0.5s ease-in-out;
+                }
+                &::before {
+                    transform: translateY(-10px);
+                }
+                &::after {
+                    transform: translateY(10px);
+                }
+            }
+            .cart::after {
+                top: -0.8rem;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px){
+    .Nav{
+        .logo{
+        font-size: 1.2rem;
+        }
+        .menu{
+        margin:0;
+        }
+    }
+}

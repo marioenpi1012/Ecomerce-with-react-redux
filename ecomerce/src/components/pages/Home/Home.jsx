@@ -2,11 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
-import Product from './Product'
-import landingPage from '../images/landingPage.png'
+import Product from '../../Product'
+import landingPage from '../../../assets/images/landingPage.png'
 import { FaArrowDown } from "react-icons/fa";
-import Slider from './Slider'
+import Slider from '../../UI/Slider'
 import { motion } from 'framer-motion/dist/framer-motion'
+import Style from './Home.module.scss'
 const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter(item => Number(item.rating.rate) > 3.5)
@@ -19,10 +20,7 @@ const Home = () => {
             x: 0,
             opacity:1,
             transition:{
-                type:"spring",
-                bounce:0.4,
-                duration:0.8,
-                stiffness:300
+                duration:1
             }
         }
     }
@@ -35,10 +33,6 @@ const Home = () => {
             opacity:1,
             x:0,
             transition:{
-                type:"spring",
-                stiffness:300,
-                mass:0.4,
-                damping:8,
                 when:"beforeChildren",
                 staggerChildren:0.4,
                 duration:1
@@ -46,27 +40,30 @@ const Home = () => {
         },
         exit:{
             x: "-100vw",
-            transition:{ease:"easeInOut"}
+            transition:{
+                ease:"easeInOut",
+                duration:1
+            }
         }
     }
     
     return (
         <motion.div 
-            className='Home'
+            className={Style.Home}
             variants={containerVariants}
             initial="hidden"
             animate="start"
             exit="exit"
             >
-            <div className="landing">
-                <div className='bg-image'  style={{
+            <div className={Style.landing}>
+                <div className={Style.bgImage}  style={{
                 backgroundImage:`url("${landingPage}")`
             }}></div>
-                <div className="container">
-                    <div className="text">
+                <div className={Style.container}>
+                    <div className={Style.text}>
                         <p>Shop our awesome inventory of clothing, jewelry, and electronics </p>
                     </div>
-                    <div className="btn">
+                    <div className={Style.btn}>
                         <NavLink to='/shop'>
                             <motion.input 
                                 type="button" 
@@ -78,7 +75,7 @@ const Home = () => {
                         </NavLink>
                     </div>
                 </div>
-                <div className="arrow">
+                <div className={Style.arrow}>
                     <Link to="/#topRated" > 
                         <motion.div
                             whileHover={{scale:1.1}}
@@ -86,13 +83,12 @@ const Home = () => {
                         >
                             <FaArrowDown />
                         </motion.div>
-                    
-                        </Link>
+                    </Link>
                 </div>
             </div>
             <div id='topRated' ></div>
-            <div className='sliderWrapper'>
-                <motion.div className='topRated'
+            <div className={Style.sliderWrapper}>
+                <motion.div className={Style.topRated}
                     initial="offscreen"
                     whileInView="onscreen"
                     viewport={{once:false, amount:.8, margin:"0% 0px -30% 0px"}}
@@ -100,17 +96,7 @@ const Home = () => {
                 >
                     <motion.div variants={variants}>Top Rated</motion.div>
                 </motion.div>
-                <motion.div
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{once:false, amount:.8}}
-                    >
-                    <motion.div
-                        variants={variants}
-                    >
-                        <Slider data={highestRated}/>
-                    </motion.div>
-                </motion.div>
+                <Slider data={highestRated}/>
             </div>
             
         </motion.div>

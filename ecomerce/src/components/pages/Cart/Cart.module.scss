@@ -1,0 +1,130 @@
+@import '../../../style/Color.module';
+.Cart {
+    margin: 5rem 0;
+    height: 100%;
+    min-height: 100vh;
+    .msg {
+        width: 90%;
+        margin-left: 2rem;
+        margin-top: 6rem;
+        font-size: 1.5rem;
+    }
+    .container {
+        width: 90%;
+        margin: auto;
+        .labels {
+            text-align: center;
+            grid-template-columns: 55% 25% 20%;
+            .title {
+                max-width: 35rem;
+                flex-grow: 1;
+                width: 100%;
+            }
+        }
+        .item,
+        .labels {
+            display: grid;
+        }
+        .items {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .item {
+                grid-template-columns: 2% 53% 25% 20%;
+                box-sizing: border-box;
+                align-items: center;
+                margin: 1rem 0;
+                border-bottom: 1px solid gray;
+                flex: 1 0;
+                .remove {
+                    margin: 0 1rem 0 0;
+                    cursor: pointer;
+                    input {
+                        border: none;
+                        color: $main-font-color;
+                        background: none;
+                    }
+                }
+                .info {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border-bottom: none;
+                    max-width: 35rem;
+                    width: 100%;
+                    flex-grow: 1;
+                    .image img {
+                        width: 100%;
+                        height: 100%;
+                        max-width: 15rem;
+                        max-height: 10rem;
+                    }
+                    .title {
+                        margin: 0 1rem;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+                .qty {
+                    flex-grow: 1;
+                    text-align: center;
+                    input {
+                        max-width: 5rem;
+                    }
+                }
+                .price {
+                    flex-grow: 1;
+                    text-align: center;
+                }
+            }
+            .checkout,
+            .subtotal {
+                align-self: end;
+                margin: 1rem 0;
+            }
+            .checkout .checkoutBtn {
+                -webkit-appearance: button;
+                color: $main-font-color;
+                padding: 1rem 2.5rem;
+                text-transform: capitalize;
+                cursor: pointer;
+            }
+        }
+    }
+    .msg{
+        text-decoration:none;
+        a{
+            padding: 0 0 0 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width:1024px){
+    .Cart .msg{
+        margin-left:1.5rem;
+        font-size:1.25rem;
+    }
+}
+@media screen and (max-width:768px){
+    .Cart .msg{
+        margin-left:1rem;
+    }
+}
+@media screen and (max-width:600px){
+    .Cart{
+        .msg{
+            margin:2rem 1rem;
+        }
+        .container .items{
+            margin:1rem 0;
+            .item{
+                grid-template-columns:5% 53% 20% 20%;
+                .info .title{
+                    font-size:0.8rem;
+                    font-weight:300;
+                }
+            }
+        }
+    }
+}

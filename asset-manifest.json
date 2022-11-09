@@ -1,28 +1,18 @@
 {
   "files": {
-    "main.css": "/Ecomerce-with-react-redux/static/css/main.caaedc48.chunk.css",
-    "main.js": "/Ecomerce-with-react-redux/static/js/main.ba7a3ec8.chunk.js",
-    "main.js.map": "/Ecomerce-with-react-redux/static/js/main.ba7a3ec8.chunk.js.map",
-    "runtime-main.js": "/Ecomerce-with-react-redux/static/js/runtime-main.e849e966.js",
-    "runtime-main.js.map": "/Ecomerce-with-react-redux/static/js/runtime-main.e849e966.js.map",
-    "static/css/2.5c613181.chunk.css": "/Ecomerce-with-react-redux/static/css/2.5c613181.chunk.css",
-    "static/js/2.add9b015.chunk.js": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js",
-    "static/js/2.add9b015.chunk.js.map": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js.map",
-    "static/js/3.c949cb96.chunk.js": "/Ecomerce-with-react-redux/static/js/3.c949cb96.chunk.js",
-    "static/js/3.c949cb96.chunk.js.map": "/Ecomerce-with-react-redux/static/js/3.c949cb96.chunk.js.map",
-    "index.html": "/Ecomerce-with-react-redux/index.html",
-    "static/css/2.5c613181.chunk.css.map": "/Ecomerce-with-react-redux/static/css/2.5c613181.chunk.css.map",
-    "static/css/main.caaedc48.chunk.css.map": "/Ecomerce-with-react-redux/static/css/main.caaedc48.chunk.css.map",
-    "static/js/2.add9b015.chunk.js.LICENSE.txt": "/Ecomerce-with-react-redux/static/js/2.add9b015.chunk.js.LICENSE.txt",
-    "static/media/designers.0ed6b744.jpg": "/Ecomerce-with-react-redux/static/media/designers.0ed6b744.jpg",
-    "static/media/landingPage.4c7c9b4f.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4f.png",
-    "static/media/logo.6e887384.jpg": "/Ecomerce-with-react-redux/static/media/logo.6e887384.jpg"
+    "main.css": "/static/css/main.b9676bfd.css",
+    "main.js": "/static/js/main.6fc87374.js",
+    "static/js/496.424ffeac.chunk.js": "/static/js/496.424ffeac.chunk.js",
+    "static/media/landingPage.png": "/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
+    "static/media/logo.jpg": "/static/media/logo.6e8873843a9d5ac6602b.jpg",
+    "static/media/designers.jpg": "/static/media/designers.0ed6b744d90aa332e2ff.jpg",
+    "index.html": "/index.html",
+    "main.b9676bfd.css.map": "/static/css/main.b9676bfd.css.map",
+    "main.6fc87374.js.map": "/static/js/main.6fc87374.js.map",
+    "496.424ffeac.chunk.js.map": "/static/js/496.424ffeac.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.e849e966.js",
-    "static/css/2.5c613181.chunk.css",
-    "static/js/2.add9b015.chunk.js",
-    "static/css/main.caaedc48.chunk.css",
-    "static/js/main.ba7a3ec8.chunk.js"
+    "static/css/main.b9676bfd.css",
+    "static/js/main.6fc87374.js"
   ]
 }

@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Photographer-Website/static/css/main.b9676bfd.css",
-    "main.js": "/Photographer-Website/static/js/main.c6228df7.js",
-    "static/js/496.424ffeac.chunk.js": "/Photographer-Website/static/js/496.424ffeac.chunk.js",
-    "static/media/landingPage.png": "/Photographer-Website/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
-    "static/media/logo.jpg": "/Photographer-Website/static/media/logo.6e8873843a9d5ac6602b.jpg",
-    "static/media/designers.jpg": "/Photographer-Website/static/media/designers.0ed6b744d90aa332e2ff.jpg",
-    "index.html": "/Photographer-Website/index.html",
-    "main.b9676bfd.css.map": "/Photographer-Website/static/css/main.b9676bfd.css.map",
-    "main.c6228df7.js.map": "/Photographer-Website/static/js/main.c6228df7.js.map",
-    "496.424ffeac.chunk.js.map": "/Photographer-Website/static/js/496.424ffeac.chunk.js.map"
+    "main.css": "/Ecomerce-with-react-redux/static/css/main.b9676bfd.css",
+    "main.js": "/Ecomerce-with-react-redux/static/js/main.e88c12fa.js",
+    "static/js/496.424ffeac.chunk.js": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js",
+    "static/media/landingPage.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
+    "static/media/logo.jpg": "/Ecomerce-with-react-redux/static/media/logo.6e8873843a9d5ac6602b.jpg",
+    "static/media/designers.jpg": "/Ecomerce-with-react-redux/static/media/designers.0ed6b744d90aa332e2ff.jpg",
+    "index.html": "/Ecomerce-with-react-redux/index.html",
+    "main.b9676bfd.css.map": "/Ecomerce-with-react-redux/static/css/main.b9676bfd.css.map",
+    "main.e88c12fa.js.map": "/Ecomerce-with-react-redux/static/js/main.e88c12fa.js.map",
+    "496.424ffeac.chunk.js.map": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b9676bfd.css",
-    "static/js/main.c6228df7.js"
+    "static/js/main.e88c12fa.js"
   ]
 }

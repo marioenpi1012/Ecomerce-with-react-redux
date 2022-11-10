@@ -1,6 +1,7 @@
 @import '../../../style/Color.module';
 .Contact {
     background-color: $white;
+    pointer-events: none;
     .container {
         position:relative;
         max-width: 119rem;

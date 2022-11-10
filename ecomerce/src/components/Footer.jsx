@@ -4,18 +4,18 @@ import { motion } from 'framer-motion'
 import Style from '../style/Footer.module.scss';
 const Footer = () => {
     return (
-        <div className={Style.Footer}>
+        <footer className={Style.Footer}>
             <div className={Style.container}>
                 <div className={Style.logo}>
                     <NavLink to='/'>Narvick's Luxury Store</NavLink>
                 </div>
                 <div className={Style.links}>
-                    <div className={Style.navLinks} >
+                    <nav className={Style.navLinks} >
                         <NavLink to='/' >Home</NavLink>
                         <NavLink to='/shop'>Shop </NavLink>
                         <NavLink to='/about' >About </NavLink>
                         <NavLink to='/contact' >Contact </NavLink>
-                    </div>
+                    </nav>
                     <div className={Style.infoLinks} >
                         <ul>
                             <li>FAQ</li>
@@ -32,11 +32,11 @@ const Footer = () => {
                 </div>
                 <div className={Style.join}>
                     <div className={Style.header}>Join Us!</div>
-                        <form action="">
+                        <form>
                             <label htmlFor="email">Email</label>
                             <input type="email" name="email" id="email" />
                             <motion.input 
-                                type="submit" 
+                                type="button" 
                                 value='Submit'
                                 whileHover={{scale:1.1}}
                                 whileTap={{scale:0.90}}
@@ -44,7 +44,7 @@ const Footer = () => {
                         </form>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

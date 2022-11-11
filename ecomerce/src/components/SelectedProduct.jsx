@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {NavLink, useHistory, useLocation} from 'react-router-dom'
 import {addedToCart} from '../actions'
 import AddedToCart from './UI/AddedToCart'
-import {motion, AnimatePresence} from 'framer-motion'
+import {motion, AnimatePresence, useIsPresent} from 'framer-motion'
 import {useEffect} from 'react'
 import Style from '../style/SelectedProduct.module.scss'
 const SelectedProduct = () => {
@@ -49,7 +49,10 @@ const SelectedProduct = () => {
         exit: {
             backgroundColor: "#ffffff",
             transition: {
-                ease: "easeIn",
+                type: "spring",
+                stiffness: 300,
+                mass: 0.4,
+                damping: 8,
             }
         }
     }
@@ -89,11 +92,20 @@ const SelectedProduct = () => {
             
         }
     }
+    const {pathname} = useLocation()
+    const isPresent = useIsPresent()
     return (
-        <motion.div
+        <AnimatePresence mode='wait' >
+{
+    isPresent &&<motion.div
             className={Style.SelectedProduct}
             variants={containerVariants}
-            exit="exit">
+            initial='hidden'
+            animate='start'
+            exit='exit'
+            transition={{duration:1}}
+            key='selectedProduct'
+            >
             <div 
                 className={Style.close}
                 >
@@ -157,6 +169,10 @@ const SelectedProduct = () => {
             <AddedToCart added={added} setAdded={setAdded} item={selectedProduct}/>;
 
         </motion.div>
+}
+        
+        </AnimatePresence>
+
     )
 }
 

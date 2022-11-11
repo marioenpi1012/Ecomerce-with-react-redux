@@ -56,7 +56,7 @@ const Products = ({loading}) => {
         <AnimatedComponent>
             <motion.div
                 className={Style.Shop}
-                variants={containerVariants}
+                // variants={containerVariants}
                 initial="hidden"
                 animate="start"
                 exit="exit"

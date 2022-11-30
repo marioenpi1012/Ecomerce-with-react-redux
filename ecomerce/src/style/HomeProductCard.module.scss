@@ -1,0 +1,126 @@
+@import './Color.module';
+
+.HomeProductCard{
+    .container{
+        padding:2rem 1rem;
+        display: flex;
+        flex-direction:column;
+        max-width: 119rem;
+        margin:0 auto;
+        .productsInfo{
+            padding-bottom: 3rem;
+            .title{
+                font-size:2rem;
+                padding-bottom: 1rem;
+                width: 100%;
+            }
+            .description{
+                width: 100%;
+            }
+        }
+        .productsContainer{
+            display: grid;
+            max-width: 80rem;
+            grid-template-columns: 1fr;
+            gap:1rem;
+            .product{
+                width: 100%;
+                height: 100%;
+                .backgroundImage{
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    background-size:cover;
+                    height: 250px;
+                    width: 70%;
+                    margin: 0 auto;
+                    margin-bottom:1rem;
+                }
+                .productInfo{
+                    text-align: center;
+                    .title{
+                        font-size:1.5rem;
+                        padding-bottom:1rem;
+                    }
+                    .price{
+                        font-size: 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px){
+    .HomeProductCard{
+        .container{
+            .productsContainer{
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                .product {
+                    .backgroundImage{
+                        width: 100%;
+                    }
+                    .productInfo{
+                        .title{
+                            font-size: 1.25rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px){
+    .HomeProductCard .container{
+        .productsInfo{
+            display: flex;
+            flex-direction:row;
+            align-items:center;
+            .title{
+                font-size: 2rem;
+            }
+            .description{
+                font-size:1.5rem;
+                line-height: 1.8rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1440px){
+    .HomeProductCard{
+        .container{
+            width: min(100vw - 10rem);
+            padding:3rem 0;
+            .productsInfo{
+                justify-content:space-between;
+                .title{
+                    font-size: 3rem;
+                }
+                .description{
+                    justify-content: flex-end;
+                }
+            }
+            .productsContainer{
+                width: 100%;
+                margin:0 auto;
+                .product{
+                    .backgroundImage{
+                        max-height: 400px;
+                        height: 100%;
+                    }
+                    .productInfo{
+                        .title{
+                            font-size: 2rem;
+                            line-height: 2.25rem;
+                        }
+                        .price{
+                            font-size:1.5rem;
+                            line-height: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

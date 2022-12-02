@@ -1,17 +1,18 @@
 .Landing{
+    
     .container{
         padding: 0 5rem;
         display: flex;
-        flex-direction: row;
-        overflow: hidden;
+        flex-wrap: nowrap;
+        width: 300%;
         .page{
             position: relative;
-            min-height: 100vh;
-            width:calc(100vw - 5rem);
-            height: 100%;
+            width:100vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            will-change: transform;
+
             &:nth-of-type(2),  &:last-of-type{
                 padding-left: 5rem;
             }

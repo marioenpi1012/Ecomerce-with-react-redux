@@ -1,4 +1,4 @@
-
+@import './style/locomotive.css';
 $gray:rgba(196, 196, 196, 1);
 
 $item-background-color:#ffffff;
@@ -8,8 +8,6 @@ $secondary-light-font-color:#94979a;
 $tertiary-font-color:#5e99da;
 $tertiary-strong-font-color:#5e99da;
 $background-color:#f0f4f7;
-
-
 *{
   margin: 0;
   padding:0;
@@ -18,6 +16,9 @@ $background-color:#f0f4f7;
 html,body{
   scroll-behavior: smooth;
   background-color: $background-color;
+}
+.App{
+  min-height: 100vh;
 }
 .Nav{
   display: flex;

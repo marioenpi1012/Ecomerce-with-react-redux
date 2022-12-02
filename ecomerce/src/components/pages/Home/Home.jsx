@@ -12,18 +12,10 @@ import HomeProductCard from '../../HomeProductCard'
 import CategoryShow from '../../UI/CategoryShow'
 import Landing from '../../Landing'
 import useLocoScroll from '../../../hooks/useLocoScroll';
-const Home = () => {
+const Home = ({start}) => {
+    console.log(start)
     const ref = useRef(null);
-    const [preloader, setPreload] = useState(true);
-    useLocoScroll(!preloader)
-    useEffect(() => {
-        if (!preloader && ref) {
-            if (typeof window === "undefined" || !window.document) {
-                return;
-            }
-        }
-    }, [preloader]);
-
+    // useLocoScroll(!start)
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter((item, i) => Number(item.rating.rate) > 3.5 && i <= 4 )
     const variants = {
@@ -65,10 +57,12 @@ const Home = () => {
     return (
         // <AnimatedComponent 
         // >
-            <div className={Style.Home} ref={ref} data-scroll-container >
+            <div className={Style.Home} ref={ref} 
+                // data-scroll-container
+                >
                 <Landing  />
                 <HomeProductCard products={highestRated} />
-                <CategoryShow />
+                {/* <CategoryShow /> */}
             </div>
 
             

@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
-import {filter, products} from '../../../actions'
+import {filter, products} from '../../../redux/actions-creator'
 import Product from '../../Product'
 import {motion, LayoutGroup, AnimatePresence} from 'framer-motion/dist/framer-motion'
 import Style from './Products.module.scss'

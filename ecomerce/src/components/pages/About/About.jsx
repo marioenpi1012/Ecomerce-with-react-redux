@@ -14,8 +14,36 @@ const About = () => {
 
         }
     }
+    const pageVariants={
+        hidden:{
+            opacity:0,
+            x:"100vw"
+        },
+        start:{
+            opacity:1,
+            x:0,
+            transition:{
+                when:"beforeChildren",
+                staggerChildren:0.4,
+                duration:1
+            }
+        },
+        exit:{
+            x: "-100vw",
+            transition:{
+                ease:"easeInOut",
+                duration:1
+            }
+        }
+    }
     return (
-        <div className='About'>
+        <motion.div 
+            className='About'
+            initial='hidden'
+            animate='start'
+            exit='exit'
+            variants={pageVariants}
+            >
             <div className="header">Our Story</div>
             <div className="container">
                 <motion.div 
@@ -59,7 +87,7 @@ const About = () => {
                 >
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

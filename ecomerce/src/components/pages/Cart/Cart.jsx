@@ -1,10 +1,11 @@
     import React, {useEffect, useState} from 'react'
     import {useDispatch, useSelector} from 'react-redux'
-    import {changeQty, removedFromCart} from '../../../actions'
-    import {NavLink, useLocation} from 'react-router-dom'
+    import { actionCreators} from '../../../redux'
+    import {Link, useLocation} from 'react-router-dom'
     import {motion, AnimatePresence, usePresence} from 'framer-motion/dist/framer-motion'
     import {totalPrice} from '../../../hooks/getPrice/getPrice'
     import Style from './Cart.module.scss'
+import { bindActionCreators } from 'redux'
     const Cart = () => {
     const products = useSelector(state => state.cart.cart)
     const total = useSelector(state => state.cart.total)
@@ -13,6 +14,7 @@
     const location = useLocation()
     const [loaded, setLoaded] = useState(false)
     const [isPresent, safeToRemove] = usePresence()
+    const { removedFromCart, changeQty } = bindActionCreators(actionCreators,dispatch)
     useEffect(() => {
     !isPresent && setTimeout(safeToRemove, 1000)
     if (document.readyState === 'complete') {
@@ -171,7 +173,7 @@
                 )
                 : (
                     <div className={Style.msg}>The cart is empty, continue 
-                        <NavLink to='/shop'>Shopping</NavLink>.</div>
+                        <Link to='/shop'>Shopping</Link>.</div>
                 )
         }
 

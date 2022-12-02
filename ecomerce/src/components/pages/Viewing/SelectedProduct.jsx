@@ -1,11 +1,10 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {NavLink, useHistory, useLocation} from 'react-router-dom'
-import {addedToCart} from '../actions'
-import AddedToCart from './UI/AddedToCart'
+import {Link, Route, Router, Routes, useLocation} from 'react-router-dom'
+import {addedToCart} from '../../../redux/actions-creator'
+import AddedToCart from '../../UI/AddedToCart'
 import {motion, AnimatePresence} from 'framer-motion/dist/framer-motion'
-import {useEffect} from 'react'
-import Style from '../style/SelectedProduct.module.scss'
+import Style from './SelectedProduct.module.scss'
 const SelectedProduct = () => {
     const selectedProduct = useSelector(state => state.cart.viewing)
     const productViewingFromCart = useSelector(state => state.cart.cart)
@@ -14,9 +13,7 @@ const SelectedProduct = () => {
     )
     const [qty, setQty] = useState("1")
     const location = useLocation()
-    const prevLocation = location
-        ?.state
-            ?.prevPath
+    // const prevLocation = location.state?.prevPath
     const dispatch = useDispatch()
     // False if the item hasn't been added to cart; and true if it has
     const [added, setAdded] = useState(false)
@@ -89,6 +86,8 @@ const SelectedProduct = () => {
             
         }
     }
+    const prevLocation = location.state?.prevPath
+    console.log({location})
     return (
         <motion.div
             className={Style.SelectedProduct}
@@ -97,7 +96,7 @@ const SelectedProduct = () => {
             <div 
                 className={Style.close}
                 >
-                <NavLink to={prevLocation}>X</NavLink>
+                <Link to={-1}>X</Link>
             </div>
             <motion.div
                 className={Style.container}

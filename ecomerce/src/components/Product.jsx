@@ -1,12 +1,13 @@
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
-import {NavLink, useLocation} from 'react-router-dom'
-import {selectedProduct} from '../actions'
+import {Link, useLocation} from 'react-router-dom'
+import {selectedProduct} from '../redux/actions-creator'
 import {motion} from 'framer-motion/dist/framer-motion'
 import Style from '../style/Product.module.scss'
 const Product = ({product, loading}) => {
     const dispatch = useDispatch()
     const location = useLocation()
+    console.log(location.pathname)
     const productVariants = {
         hidden:{
             opacity:0
@@ -33,15 +34,17 @@ const Product = ({product, loading}) => {
             </div>
             <div className={Style.title}>{product.title}</div>
             <div className={Style.price}>${product.price}</div>
-            <NavLink
-                to={{ pathname: '/viewing',state: {prevPath: location.pathname}}}>
+            <Link
+                    to='/viewing'
+                    state={{prevPath:location.pathname}}                
+                >
                 <input
                     id='quickView'
                     type="button"
                     value="quick view"
                     data-button-id={product.id}
                     onClick={() => dispatch(selectedProduct(product.id))}/>
-            </NavLink>
+            </Link>
         </motion.div>
     )
 }

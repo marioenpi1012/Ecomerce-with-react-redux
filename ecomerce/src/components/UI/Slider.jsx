@@ -3,13 +3,14 @@ import {FaGreaterThan, FaLessThan} from 'react-icons/fa'
 import { useRef, useState } from "react"
 import Style from '../../style/Slider.module.scss'
 // Swiper js
-import SwiperCore, { Navigation, Pagination, Scrollbar } from 'swiper'
+import  { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/swiper.scss'
 import 'swiper/modules/navigation/navigation.scss'
 import 'swiper/modules/pagination/pagination.scss'
 import 'swiper/modules/scrollbar/scrollbar.scss'
-SwiperCore.use([Navigation, Pagination])
+// Framer-motion
+import { motion } from 'framer-motion/dist/framer-motion'
 
 const Slider = ({data}) =>{
     const items = useRef(null)
@@ -45,12 +46,23 @@ const Slider = ({data}) =>{
     return (
         <div className={Style.Slider}>
             <div className={Style.container}>
-                    <div className="swiper-button-prev" ref={navigationPrevRef} />
-                    <div className="swiper-button-next" ref={navigationNextRef} />
+                    <motion.div 
+                        className="swiper-button-prev" 
+                        ref={navigationPrevRef} 
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.95}}
+                        />
+                    <motion.div 
+                        className="swiper-button-next" 
+                        ref={navigationNextRef} 
+                        whileHover={{scale:1.1}}
+                        whileTap={{scale:0.95}}
+                        />
                     <div className={`swiper-pagination ${Style.pagination}`} ref={paginationRef} />
                         <Swiper
                             {...customSwiperParams}
                             className={Style.items}
+                            modules={[Navigation,Pagination]}
                             onBeforeInit={(swiper)=>{
                                 swiper.params.navigation.prevEl = navigationPrevRef.current
                                 swiper.params.navigation.nextEl = navigationNextRef.current

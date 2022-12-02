@@ -1,8 +1,37 @@
 import React from 'react'
 import Style from './Contact.module.scss';
+import { motion } from 'framer-motion/dist/framer-motion'
 const Contact = () => {
+    const pageVariants={
+        hidden:{
+            opacity:0,
+            x:"100vw"
+        },
+        start:{
+            opacity:1,
+            x:0,
+            transition:{
+                when:"beforeChildren",
+                staggerChildren:0.4,
+                duration:1
+            }
+        },
+        exit:{
+            x: "-100vw",
+            transition:{
+                ease:"easeInOut",
+                duration:1
+            }
+        }
+    }
     return (
-        <div className={Style.Contact}>
+        <motion.div 
+            className={Style.Contact}
+            initial='hidden'
+            animate='start'
+            exit='exit'
+            variants={pageVariants}
+            >
             <div className={Style.header}>
                 Get in touch
             </div>
@@ -58,7 +87,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

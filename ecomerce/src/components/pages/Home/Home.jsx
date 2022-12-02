@@ -64,12 +64,14 @@ const Home = () => {
     }
     
     return (
-        <AnimatedComponent className={Style.Home}
-            data-scroll-container id='Home' ref={ref}
+        <AnimatedComponent 
         >
-            <Landing />
-            <HomeProductCard products={highestRated} />
-            <CategoryShow />
+            <div className={Style.Home} ref={ref} data-scroll-container >
+                <Landing  />
+                <HomeProductCard products={highestRated} />
+                <CategoryShow />
+            </div>
+
             
         </AnimatedComponent>
 

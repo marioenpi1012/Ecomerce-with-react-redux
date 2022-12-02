@@ -2,12 +2,15 @@ import { useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import LocomotiveScroll from 'locomotive-scroll';
-gsap.registerPlugin(ScrollTrigger)
+
+gsap.registerPlugin(ScrollTrigger);
+
 const useLocoScroll = ({start}) =>{
     useEffect(()=>{
-        if(!start) return ;
+        if(!false) return ;
         let locoScroll = null;
         const ref = document.querySelector('#Home')
+        console.log({ref})
         locoScroll = new LocomotiveScroll({
             el:ref,
             smooth:true,

@@ -42,7 +42,7 @@ function App() {
             <Nav /> 
             <AnimatePresence mode='wait'>
                 <Routes location={location} key={location.pathname}>
-                    <Route path='/' exact element={<Home />}/>
+                    <Route path='/Ecomerce-with-react-redux' exact element={<Home />}/>
                     <Route path='/shop' element={isLoading ? <Skeleton /> : <Products />}/>
                     <Route path='/viewing' element={<SelectedProduct />}/>
                     <Route path='/cart' element={<Cart />}/>

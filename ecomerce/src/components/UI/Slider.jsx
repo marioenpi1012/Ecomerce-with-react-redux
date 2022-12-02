@@ -5,12 +5,11 @@ import Style from '../../style/Slider.module.scss'
 // Swiper js
 import  { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/swiper.scss'
-import 'swiper/modules/navigation/navigation.scss'
-import 'swiper/modules/pagination/pagination.scss'
-import 'swiper/modules/scrollbar/scrollbar.scss'
-// Framer-motion
-import { motion } from 'framer-motion/dist/framer-motion'
+import 'swiper'
+import 'swiper/scss/navigation'
+import 'swiper/scss/pagination'
+import 'swiper/scss/scrollbar'
+SwiperCore.use([Navigation, Pagination])
 
 const Slider = ({data}) =>{
     const items = useRef(null)

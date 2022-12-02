@@ -1,4 +1,7 @@
 $gray: rgba(196,196,196,1);
+$light-gray:#E0E0E0;
+$black:#000;
+$white:#fff;
 $item-background-color: #ffffff;
 $main-font-color: #28292b;
 $secondary-font-color: #818181;
@@ -11,22 +14,28 @@ $background-color: #f0f4f7;
     position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-    text-align: center;
     width: 100%;
     height: 100%;
-    min-width: 160px;
-    max-width: 240px;
-    min-height: 280px;
-    max-height: 370px;
+    gap: 0.75rem;
     object-fit: contain;
     transition: transform 450ms;
-    background-color: $item-background-color;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    text-decoration:none;
     .image {
+        background-color: #ffffffa1;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        width: inherit;
+        height: 350px;
+        @media screen and (max-width:600px){
+            height: 160px;
+            width: 160px;
+        }
         img {
             height: 150px;
             width: 100%;
@@ -36,18 +45,18 @@ $background-color: #f0f4f7;
             position: relative;
         }
     }
+    .title, .price{
+        color:$main-font-color;
+        font-weight: 500;
+        text-decoration:none;
+    }
     .title {
-        width: 90%;
-        margin: 0 auto;
+        width: 60%;
+        margin-right: auto;
         font-size: 1rem;
-        color: $secondary-font-color;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
-    }
-    .price {
-        color: $tertiary-font-color;
-        margin: 1rem 0;
     }
     a {
         text-decoration: none;
@@ -67,7 +76,6 @@ $background-color: #f0f4f7;
             text-transform: uppercase;
             cursor: pointer;
             position: relative;
-
         }
     }
 

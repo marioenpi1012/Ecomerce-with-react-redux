@@ -2,7 +2,7 @@ import React from 'react'
 import Style from '../../style/Skeleton.module.scss'
 const Skeleton = () => {
     const items = [];
-    for(let i = 0; i < 20; i++){
+    for(let i = 0; i < 3; i++){
         items.push(<div key={i} className={Style.skeletonItem} />)
     }
     return (
@@ -14,6 +14,7 @@ const Skeleton = () => {
                             <div className={Style.skeletonItems}>
                                 {items}
                             </div>
+                            
                         </div>
                     </div>
                     

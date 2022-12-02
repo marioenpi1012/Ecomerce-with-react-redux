@@ -1,0 +1,30 @@
+@import './Color.module';
+
+.CategoryShow{
+    .container{
+        padding:0 0.5rem;
+        display:grid;
+        min-height: 55rem;
+        height: 100%;
+        grid-template-columns:repeat(4, 1fr);
+        gap: .75rem;
+        .category{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .largeImageVertical{
+            grid-row: span 2;
+            // grid-row: 1 / -1 ;
+            background-color: red;
+        }
+        .largeImageHorizontal{
+            background-color: blue;
+            grid-column: span 2;
+        }
+    }
+}

@@ -1,9 +1,9 @@
 import {useRef, useState} from 'react'
 import {FaShoppingCart, FaBars} from 'react-icons/fa'
-import {BrowserRouter as Router, NavLink} from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {itemsInCart} from '../hooks/itemsInCart/itemsInCart'
-import {motion, useCycle} from 'framer-motion/dist/framer-motion'
+import {motion, useCycle} from 'framer-motion'
 import {useEffect} from 'react'
 import Style from '../style/Nav.module.scss'
 const Nav = () => {
@@ -75,84 +75,66 @@ const Nav = () => {
     }
 
     return (
-        <motion.nav
-            className={Style.Nav}
-            ref={navRef}
-            initial={[false, {opacity: 1}]}
-            animate={{
-                opacity: shouldShowAction
-                    ? 1
-                    : 0
-            }}
-            transition={{
-                opacity: {
-                    duration: 0.2
-                }
-            }}>
-            <div className={Style.logo}>
-                <NavLink to=''>Narvick's Luxury Store</NavLink>
-            </div>
-            <motion.ul
-                className={navOpened
-                    ? `${Style.links} ${Style.open}`
-                    : `${Style.links}`
-                }
-                variants={ulVariants}
-                animate={navOpened
-                    ? "open"
-                    : "closed"}>
-                <motion.li
-                    variants={variants}
-                    whileHover={{
-                        scale: 1.1
-                    }}
-                    whileTap={{
-                        scale: 0.95
-                    }}>
-                    <NavLink to='/shop' onClick={() => setNavOpened()} activeClassName={Style.current}>shop</NavLink>
-                </motion.li>
-                <motion.li
-                    variants={variants}
-                    whileHover={{
-                        scale: 1.1
-                    }}
-                    whileTap={{
-                        scale: 0.95
-                    }}>
-                    <NavLink to='/about' onClick={() => setNavOpened()} activeClassName={Style.current}>about</NavLink>
-                </motion.li>
-                <motion.li
-                    variants={variants}
-                    whileHover={{
-                        scale: 1.1
-                    }}
-                    whileTap={{
-                        scale: 0.95
-                    }}>
-                    <NavLink to='/contact' onClick={() => setNavOpened()} activeClassName={Style.current}>contact</NavLink>
-                </motion.li>
-            </motion.ul>
-            <div
-                className={navOpened
-                    ? `${Style.menu} ${Style.open}`
-                    : `${Style.menu}`
-                    }
+        <header>
+                <motion.nav
+                    className={Style.Nav}
+                    ref={navRef}
+                    
+                    initial={[false, {opacity: 1}]}
+                    animate={{opacity: shouldShowAction ? 1 : 0 }}
+                    transition={{ opacity: {duration: 0.2 }}}
                 >
-                <motion.div 
-                    className={Style.cart}
-                    whileHover={{scale:1.1}}
-                    whileTap={{scale:0.9}}
-                    data-items={itemsInCart(cartData)}
-                    >
-                    <NavLink to='/cart'><FaShoppingCart/>
-                    </NavLink>
-                </motion.div>
-                <div className={Style.mobileMenu} onClick={() => setNavOpened()}>
-                    <div className={Style.burgerMenu}></div>
-                </div>
-            </div>
+                    <motion.div 
+                    className={Style.container}
+                    initial={[false, {opacity: 1}]}
+                    animate={{opacity: shouldShowAction ? 1 : 0 }}
+                    transition={{ opacity: {duration: 0.2 }}}
+                    >       
+                    <div className={Style.logo}>
+                        <NavLink to='/'>Narvick's Luxury Store</NavLink>
+                    </div>
+                    <motion.ul
+                        className={navOpened ? `${Style.links} ${Style.open}`: `${Style.links}`}
+                        variants={ulVariants}
+                        animate={navOpened ? "open" : "closed"}>
+                        <motion.li
+                            variants={variants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 0.95}}>
+                            <NavLink to='/shop' onClick={() => setNavOpened()}>shop</NavLink>
+                        </motion.li>
+                        <motion.li
+                            variants={variants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 0.95}}>
+                            <NavLink to='/about' onClick={() => setNavOpened()} >about</NavLink>
+                        </motion.li>
+                        <motion.li
+                            variants={variants}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{scale: 0.95}}>
+                            <NavLink to='/contact' onClick={() => setNavOpened()} >contact</NavLink>
+                        </motion.li>
+                    </motion.ul>
+                    <div className={navOpened ? `${Style.menu} ${Style.open}`: `${Style.menu}`}>
+                        <motion.div 
+                            className={Style.cart}
+                            whileHover={{scale:1.1}}
+                            whileTap={{scale:0.9}}
+                            data-items={itemsInCart(cartData)}
+                            >
+                            <NavLink to='/cart'><FaShoppingCart/>
+                            </NavLink>
+                        </motion.div>
+                        <div className={Style.mobileMenu} onClick={() => setNavOpened()}>
+                            <div className={Style.burgerMenu}></div>
+                        </div>
+                    </div>
+                    </motion.div>
+                </motion.nav>
+        
 
-        </motion.nav>
+        </header>
     )
 }
 

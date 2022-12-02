@@ -2,8 +2,9 @@ import {React, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {filter, products} from '../../../redux/actions-creator'
 import Product from '../../Product'
-import {motion, LayoutGroup, AnimatePresence} from 'framer-motion/dist/framer-motion'
+import {motion, LayoutGroup, AnimatePresence} from 'framer-motion'
 import Style from './Products.module.scss'
+import AnimatedComponent from '../../UI/AnimatedComponent'
 const Products = ({loading}) => {
     const dispatch = useDispatch()
     const filterBy = useSelector(state => state.cart.filterBy)
@@ -52,10 +53,10 @@ const Products = ({loading}) => {
     }
 
     return (
-        <AnimatePresence exitBeforeEnter="exitBeforeEnter">
+        <AnimatedComponent>
             <motion.div
                 className={Style.Shop}
-                variants={containerVariants}
+                // variants={containerVariants}
                 initial="hidden"
                 animate="start"
                 exit="exit"
@@ -103,7 +104,7 @@ const Products = ({loading}) => {
                     </div>
                 </div>
             </motion.div>
-        </AnimatePresence>
+        </AnimatedComponent>
     )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
@@ -6,11 +6,27 @@ import Product from '../../Product'
 import landingPage from '../../../assets/images/landingPage.png'
 import { FaArrowDown } from "react-icons/fa";
 import Slider from '../../UI/Slider'
-import { motion } from 'framer-motion/dist/framer-motion'
+import { motion } from 'framer-motion'
 import Style from './Home.module.scss'
+import AnimatedComponent from '../../UI/AnimatedComponent'
+import HomeProductCard from '../../HomeProductCard'
+import CategoryShow from '../../UI/CategoryShow'
+import Landing from '../../Landing'
+import useLocoScroll from '../../../hooks/useLocoScroll';
 const Home = () => {
+    const ref = useRef(null);
+    const [preloader, setPreload] = useState(true);
+    useLocoScroll(!preloader)
+    useEffect(() => {
+        if (!preloader && ref) {
+            if (typeof window === "undefined" || !window.document) {
+                return;
+            }
+        }
+    }, [preloader]);
+
     const state = useSelector(state => state.cart.products)
-    const highestRated = state.filter(item => Number(item.rating.rate) > 3.5)
+    const highestRated = state.filter((item, i) => Number(item.rating.rate) > 3.5 && i <= 4 )
     const variants = {
         offscreen:{
             x:"100%",
@@ -48,58 +64,17 @@ const Home = () => {
     }
     
     return (
-        <motion.div 
-            className={Style.Home}
-            variants={containerVariants}
-            initial="hidden"
-            animate="start"
-            exit="exit"
-            >
-            <div className={Style.landing}>
-                <div className={Style.bgImage}  style={{
-                backgroundImage:`url("${landingPage}")`
-            }}></div>
-                <div className={Style.container}>
-                    <div className={Style.text}>
-                        <p>Shop our awesome inventory of clothing, jewelry, and electronics </p>
-                    </div>
-                    <div className={Style.btn}>
-                        <NavLink to='/shop'>
-                            <motion.input 
-                                type="button" 
-                                id='collectionBtn' 
-                                value="Check Our Collection" 
-                                whileHover={{scale:1.1}}
-                                whileTap={{scale:0.9}}
-                                />
-                        </NavLink>
-                    </div>
-                </div>
-                <div className={Style.arrow}>
-                    <Link to="/#topRated" > 
-                        <motion.div
-                            whileHover={{scale:1.1}}
-                            whileTap={{scale:0.9}}
-                        >
-                            <FaArrowDown />
-                        </motion.div>
-                    </Link>
-                </div>
+        <AnimatedComponent 
+        >
+            <div className={Style.Home} ref={ref} data-scroll-container >
+                <Landing  />
+                <HomeProductCard products={highestRated} />
+                <CategoryShow />
             </div>
-            <div id='topRated' ></div>
-            <div className={Style.sliderWrapper}>
-                <motion.div className={Style.topRated}
-                    initial="offscreen"
-                    whileInView="onscreen"
-                    viewport={{once:false, amount:.8, margin:"0% 0px -30% 0px"}}
-                    transition={{delay:1}}
-                >
-                    <motion.div variants={variants}>Top Rated</motion.div>
-                </motion.div>
-                <Slider data={highestRated}/>
-            </div>
+
             
-        </motion.div>
+        </AnimatedComponent>
+
         
     )
 }

@@ -2,13 +2,12 @@
     .container{
         padding: 0 5rem;
         display: flex;
-        overflow: scroll;
         flex-direction: row;
+        overflow: hidden;
         .page{
             position: relative;
             min-height: 100vh;
-            min-width: calc(100vw - 5rem);
-            width:100%;
+            width:calc(100vw - 5rem);
             height: 100%;
             display: flex;
             justify-content: space-between;
@@ -17,10 +16,10 @@
                 padding-left: 5rem;
             }
             .collection{
-                position:absolute;
-                top: 50%;
-                left:50%;
-                transform:translate(-50%,-50%);
+                // position:absolute;
+                // top: 50%;
+                // left:50%;
+                // transform:translate(-50%,-50%);
                 .title{
                     font-size:8rem;
                     line-height: 11rem;
@@ -45,7 +44,8 @@
                 }
             }
             .image{
-                width: 35%;
+                // width: 35%;
+                width: 600px;
                 height: 600px;
             }
             .imageLeft{

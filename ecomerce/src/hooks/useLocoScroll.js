@@ -9,7 +9,7 @@ const useLocoScroll = ({start}) =>{
     useEffect(()=>{
         if(!false) return ;
         let locoScroll = null;
-        const ref = document.querySelector('#Home')
+        const ref = document.querySelector('.Home_Home__xmXlj')
         console.log({ref})
         locoScroll = new LocomotiveScroll({
             el:ref,
@@ -23,19 +23,19 @@ const useLocoScroll = ({start}) =>{
         })
 
         ScrollTrigger.scrollerProxy(ref, {
-            scrollLeft(value){
-                if(locoScroll){
-                    return arguments.length 
-                    ? locoScroll.scrollTo(value, 0, 0) 
-                    : locoScroll.scrollTo.instance.scroll.x
-                }
-                return null;
-            },
             scrollTop(value){
                 if(locoScroll){
                     return arguments.length 
                     ? locoScroll.scrollTo(value, 0, 0) 
                     : locoScroll.scrollTo.instance.scroll.y
+                }
+                return null;
+            },
+            scrollLeft(value){
+                if(locoScroll){
+                    return arguments.length 
+                    ? locoScroll.scrollTo(value, 0, 0) 
+                    : locoScroll.scrollTo.instance.scroll.x
                 }
                 return null;
             },

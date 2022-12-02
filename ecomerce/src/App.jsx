@@ -2,8 +2,8 @@ import './App.scss'
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios'
-import {Switch, Route, useLocation} from 'react-router-dom';
-import {products} from './actions';
+import {Routes, Route, useLocation} from 'react-router-dom';
+import {products} from './redux/actions-creator';
 import Nav from './components/Nav';
 import Home from './components/pages/Home/Home'
 import SelectedProduct from './components/pages/Viewing/SelectedProduct';
@@ -41,22 +41,14 @@ function App() {
         <> 
         < Nav /> 
         <AnimatePresence exitBeforeEnter>
-            <Switch location={location} key={location.pathname}>
-                <Route path='/' exact>
-                    <Home/></Route>
-                <Route path='/shop'>
-                    {
-                        isLoading
-                            ? <Skeleton data={fetchProducts}/>
-                            : <Products/>
-
-                    }
-                </Route>
-                <Route path='/viewing' component={SelectedProduct}/>
-                <Route path='/cart' component={Cart}/>
-                <Route path='/about' component={About}/>
-                <Route path='/contact' component={Contact}/>
-            </Switch>
+            <Routes location={location} key={location.pathname}>
+                <Route path='/' exact element={<Home />} />
+                <Route path='/shop' element={isLoading ? <Skeleton /> : <Products />} />
+                <Route path='/viewing' element={<SelectedProduct />}/>
+                <Route path='/cart' element={<Cart />}/>
+                <Route path='/about' element={<About />}/>
+                <Route path='/contact' element={<Contact />}/>
+            </Routes>
         </AnimatePresence>
         <Footer/>
     </>

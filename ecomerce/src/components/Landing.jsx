@@ -6,14 +6,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 // gsap.registerPlugin( ScrollTrigger)
 const Landing = () =>{
     const ref = useRef(null)
-    const sectionRef = useRef(null)
     useEffect(() => {
     // This does not seem to work without a settimeout
     setTimeout(() => {
         console.log(ref.current.offsetWidth);
         console.log(ref.current.clientWidth);
         console.log({ current: ref.current });
-        let sections = gsap.utils.toArray(sectionRef.current);
+        let sections = gsap.utils.toArray('.Landing_page__T05jg');
         console.log({sections})
         gsap.to(sections, {
             xPercent: - 100 * (sections.length - 1),
@@ -21,7 +20,7 @@ const Landing = () =>{
             scrollTrigger: {
             start: "top top",
             trigger: ref.current,
-            scroller:  style.Home,
+            scroller: '.Home_Home__xmXlj',
             pin: true,
             scrub: 0.5,
             snap: 1 / (sections.length - 1),
@@ -31,10 +30,25 @@ const Landing = () =>{
         ScrollTrigger.refresh();
         });
     }, []);
+    const titles = ["Exclusive Collection", "Narvick's Collection", "Limited Editon"]
     return ( 
         <div className={style.Landing} data-scroll-section   >
             <div className={style.container} ref={ref}  >
-                <div className={style.page} >
+                {
+                    titles.map((title, i) =>(
+                        <div className={style.page} key={i} >
+                            <BackgroundImage image={`Landing${i+1}`} className={`${style.image} ${style.imageLeft}`} />
+                            <div className={style.collection}>
+                                <h1 className={style.title}>
+                                    {title}
+                                </h1>
+                                <p className={style.subtitle}>on sale</p>
+                            </div>
+                            <BackgroundImage image={`Landing${i+2}`}  className={`${style.image} ${style.imageRight}`} />
+                        </div>
+                    ))
+                }
+                {/* <div className={style.page} data-scroll >
                     <div className={style.collection}>
                         <h1 className={style.title}>
                             <span>Exclusive</span>
@@ -45,7 +59,7 @@ const Landing = () =>{
                     <BackgroundImage image='Landing1' className={`${style.image} ${style.imageLeft}`} />
                     <BackgroundImage image='Landing2' className={`${style.image} ${style.imageRight}`} />
                 </div>
-                <div className={style.page} ref={sectionRef} >
+                <div className={style.page} ref={sectionRef} data-scroll >
                     <div className={style.collection}>
                         <h1 className={style.title}>
                             <span>Narvick's</span>
@@ -56,7 +70,7 @@ const Landing = () =>{
                     <BackgroundImage image='Landing3' className={`${style.image} ${style.imageLeft}`} />
                     <BackgroundImage image='Landing4' className={`${style.image} ${style.imageRight}`} />
                 </div>
-                <div className={style.page} >
+                <div className={style.page} ref={sectionRef} data-scroll >
                     <div className={style.collection}>
                         <h1 className={style.title}>
                             <span>Limited</span>
@@ -66,7 +80,7 @@ const Landing = () =>{
                     </div>
                     <BackgroundImage image='Landing5' className={`${style.image} ${style.imageLeft}`} />
                     <BackgroundImage image='Landing6' className={`${style.image} ${style.imageRight}`} />
-                </div>
+                </div> */}
             
             </div>
         </div>

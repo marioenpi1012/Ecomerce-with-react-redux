@@ -1,11 +1,11 @@
     import React, {useEffect, useState} from 'react'
     import {useDispatch, useSelector} from 'react-redux'
-    import {changeQty, removedFromCart} from '../../../actions'
-    import {NavLink, useLocation} from 'react-router-dom'
+    import {Link, useLocation} from 'react-router-dom'
     import {motion, AnimatePresence, usePresence} from 'framer-motion'
     import {totalPrice} from '../../../hooks/getPrice/getPrice'
     import Style from './Cart.module.scss'
 import { bindActionCreators } from 'redux'
+import { actionCreators } from '../../../redux'
     const Cart = () => {
     const products = useSelector(state => state.cart.cart)
     const total = useSelector(state => state.cart.total)

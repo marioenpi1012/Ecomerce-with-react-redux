@@ -5,7 +5,6 @@ import { HashLink as Link } from 'react-router-hash-link'
 import Product from '../../Product'
 import landingPage from '../../../assets/images/landingPage.png'
 import { FaArrowDown } from "react-icons/fa";
-import Slider from '../../UI/Slider'
 import { motion } from 'framer-motion'
 import Style from './Home.module.scss'
 import AnimatedComponent from '../../UI/AnimatedComponent'
@@ -64,8 +63,8 @@ const Home = () => {
     }
     
     return (
-        <AnimatedComponent 
-        >
+        // <AnimatedComponent 
+        // >
             <div className={Style.Home} ref={ref} data-scroll-container >
                 <Landing  />
                 <HomeProductCard products={highestRated} />
@@ -73,7 +72,7 @@ const Home = () => {
             </div>
 
             
-        </AnimatedComponent>
+        // </AnimatedComponent>
 
         
     )

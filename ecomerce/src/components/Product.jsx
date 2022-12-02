@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux'
 import {NavLink, useLocation} from 'react-router-dom'
-import {selectedProduct} from '../actions'
+import {selectedProduct} from '../redux/actions-creator'
 import {motion} from 'framer-motion'
 import Style from '../style/Product.module.scss'
 const Product = ({product, loading}) => {

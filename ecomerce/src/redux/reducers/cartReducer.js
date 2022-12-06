@@ -118,11 +118,6 @@ export const cartReducer = (state = initState, action)=>{
         }
         case actions.FILTER:{
             switch (action.payload.type) {
-                case "default":
-                    return {
-                        ...state,
-                        filterBy: state.products
-                    }
                 case "women's clothing":
                     return {
                         ...state,
@@ -145,7 +140,7 @@ export const cartReducer = (state = initState, action)=>{
                     }
                 
                 default:
-                    return state
+                    break;
             }
             
         }

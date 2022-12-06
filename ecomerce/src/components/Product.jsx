@@ -4,10 +4,9 @@ import {NavLink, useLocation} from 'react-router-dom'
 import {selectedProduct} from '../redux/actions-creator'
 import {motion} from 'framer-motion'
 import Style from '../style/Product.module.scss'
-const Product = ({product, loading}) => {
+const Product = ({product}) => {
     const dispatch = useDispatch()
     const location = useLocation()
-    console.log(location.pathname)
     const productVariants = {
         hidden:{
             opacity:0

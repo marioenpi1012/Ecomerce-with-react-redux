@@ -1,5 +1,5 @@
 import style from '../style/HomeProductCard.module.scss'
-import { truncate } from '../components/utils'
+import { truncate } from './utils/utils'
 
 const HomeProductCard = ({title, products}) =>{
     return(

@@ -1,0 +1,53 @@
+.Filter{
+    width: 25vw;
+    position: relative;
+    &__container{
+        display: flex;
+        flex-direction:column;
+        position: sticky;
+        left:0;
+        top: 5rem;
+        .category{
+            display: flex;
+            flex-direction:column;
+            margin-bottom: 0.85rem;
+            .title{
+                font-size: 1.25rem;
+                font-weight: 450;
+                margin-bottom:1rem;
+            }
+            .selections{
+                display: flex;
+                flex-direction:column;
+                &__category{
+                    list-style:none;
+                    font-size: 0.85rem;
+                    margin-bottom:0.5rem;
+                    display: flex;
+                    flex-direction:row;
+                    align-items: center;
+                    .roundInput{
+                        width:0.85rem;
+                        height: 0.85rem;
+                        -webkit-border-radius:100%;
+                        -moz-border-radius:100%;
+                        border-radius:100%;
+                        -webkit-appearance: none;
+                        appearance: none;
+                        outline:none;
+                        cursor:pointer;
+                        border: 1px solid black;
+                        &:checked{
+                            -webkit-appearance: auto;
+                            appearance: auto;
+                            clip-path: circle(50% at 50% 50%);
+                        }
+                    }
+                    label{
+                        padding-left:0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

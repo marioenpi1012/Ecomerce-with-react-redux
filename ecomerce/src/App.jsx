@@ -7,12 +7,13 @@ import {products} from './redux/actions-creator';
 import Nav from './components/Nav';
 import Home from './components/pages/Home/Home'
 import SelectedProduct from './components/pages/Viewing/SelectedProduct';
-import Products from './components/pages/Shop/Products';
+import Shop from './components/pages/Shop/Shop';
 import Cart from './components/pages/Cart/Cart';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import Footer from './components/Footer';
 import Skeleton from './components/UI/Skeleton';
+import ProductCategory from './components/pages/Category/ProductCategory'
 import { AnimatePresence } from 'framer-motion';
 import useLocoScroll from './hooks/useLocoScroll';
 function App() {
@@ -44,7 +45,11 @@ function App() {
         <AnimatePresence mode='wait'>
             <Routes location={location} key={location.pathname}>
                 <Route path='/' exact element={<Home start={isLoading} />} />
-                <Route path='/shop' element={isLoading ? <Skeleton /> : <Products />} />
+                <Route path='/shop' element={isLoading ? <Skeleton /> : <Shop />} />
+                <Route 
+                    path='/shop/:categoryName' 
+                    element={<ProductCategory />}
+                    />
                 <Route path='/viewing' element={<SelectedProduct />}/>
                 <Route path='/cart' element={<Cart />}/>
                 <Route path='/about' element={<About />}/>

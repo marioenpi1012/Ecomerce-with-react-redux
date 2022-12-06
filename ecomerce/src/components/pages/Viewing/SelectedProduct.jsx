@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import {Link, Route, Router, Routes, useLocation} from 'react-router-dom'
+import {NavLink, Route, Router, Routes, useLocation} from 'react-router-dom'
 import {addedToCart} from '../../../redux/actions-creator'
 import AddedToCart from '../../UI/AddedToCart'
-import {motion, AnimatePresence, useIsPresent} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 import Style from './SelectedProduct.module.scss'
 const SelectedProduct = () => {
     const selectedProduct = useSelector(state => state.cart.viewing)
@@ -92,7 +92,7 @@ const SelectedProduct = () => {
     return (
         <AnimatePresence mode='wait' >
 {
-    isPresent &&<motion.div
+    <motion.div
             className={Style.SelectedProduct}
             variants={containerVariants}
             initial='hidden'
@@ -104,7 +104,7 @@ const SelectedProduct = () => {
             <div 
                 className={Style.close}
                 >
-                <NavLink to={prevLocation}>X</NavLink>
+                <NavLink to={-1}>X</NavLink>
             </div>
             <motion.div
                 className={Style.container}

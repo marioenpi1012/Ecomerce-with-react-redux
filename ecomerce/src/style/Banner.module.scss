@@ -1,0 +1,50 @@
+@import './Color.module';
+
+.Banner{
+    display: flex;
+    flex-direction:row;
+    background-color: $gray;
+    width: 70vw;
+    min-height: 15rem;
+    .imageWrapper{
+        width: 30%;
+        .image{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .container{
+        display: flex;
+        flex-direction:column;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        padding: 0 2rem;
+        .title{
+            position:relative;
+            font-size:3rem;
+            line-height: 3.8rem;
+            font-weight: 500;
+            text-transform: capitalize;
+            margin-bottom: 0.5rem;
+            &::after{
+                content:"";
+                bottom: 0;
+                left: 0;
+                position:absolute;
+                width:100%;
+                border:1px solid $black;
+            }
+        }
+        .description{
+            display: flex;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color:$main-font-color;
+            opacity: 0.60;
+            align-self:flex-end;
+            padding-top:1rem;
+        }
+    }
+}

@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Ecomerce-with-react-redux/static/css/main.1ab0c37c.css",
-    "main.js": "/Ecomerce-with-react-redux/static/js/main.64bc807f.js",
+    "main.css": "/Ecomerce-with-react-redux/static/css/main.4516e5c2.css",
+    "main.js": "/Ecomerce-with-react-redux/static/js/main.9833d407.js",
     "static/js/496.424ffeac.chunk.js": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js",
     "static/media/landingPage.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
     "static/media/logo.jpg": "/Ecomerce-with-react-redux/static/media/logo.6e8873843a9d5ac6602b.jpg",
     "static/media/designers.jpg": "/Ecomerce-with-react-redux/static/media/designers.0ed6b744d90aa332e2ff.jpg",
     "index.html": "/Ecomerce-with-react-redux/index.html",
-    "main.1ab0c37c.css.map": "/Ecomerce-with-react-redux/static/css/main.1ab0c37c.css.map",
-    "main.64bc807f.js.map": "/Ecomerce-with-react-redux/static/js/main.64bc807f.js.map",
+    "main.4516e5c2.css.map": "/Ecomerce-with-react-redux/static/css/main.4516e5c2.css.map",
+    "main.9833d407.js.map": "/Ecomerce-with-react-redux/static/js/main.9833d407.js.map",
     "496.424ffeac.chunk.js.map": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ab0c37c.css",
-    "static/js/main.64bc807f.js"
+    "static/css/main.4516e5c2.css",
+    "static/js/main.9833d407.js"
   ]
 }

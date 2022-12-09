@@ -1,18 +1,22 @@
 {
   "files": {
-    "main.css": "/Ecomerce-with-react-redux/static/css/main.4516e5c2.css",
-    "main.js": "/Ecomerce-with-react-redux/static/js/main.9833d407.js",
+    "main.css": "/Ecomerce-with-react-redux/static/css/main.aa68ac49.css",
+    "main.js": "/Ecomerce-with-react-redux/static/js/main.80e74368.js",
     "static/js/496.424ffeac.chunk.js": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js",
+    "static/media/women.jpg": "/Ecomerce-with-react-redux/static/media/women.6f58141286b32c7dd456.jpg",
     "static/media/landingPage.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
+    "static/media/men.jpg": "/Ecomerce-with-react-redux/static/media/men.766c81dfcdc7671ea4f1.jpg",
     "static/media/logo.jpg": "/Ecomerce-with-react-redux/static/media/logo.6e8873843a9d5ac6602b.jpg",
     "static/media/designers.jpg": "/Ecomerce-with-react-redux/static/media/designers.0ed6b744d90aa332e2ff.jpg",
+    "static/media/electronics.jpg": "/Ecomerce-with-react-redux/static/media/electronics.7e6b0b94fd45e40566ba.jpg",
+    "static/media/accessories.jpg": "/Ecomerce-with-react-redux/static/media/accessories.e7f29822cd5ac3a228e0.jpg",
     "index.html": "/Ecomerce-with-react-redux/index.html",
-    "main.4516e5c2.css.map": "/Ecomerce-with-react-redux/static/css/main.4516e5c2.css.map",
-    "main.9833d407.js.map": "/Ecomerce-with-react-redux/static/js/main.9833d407.js.map",
+    "main.aa68ac49.css.map": "/Ecomerce-with-react-redux/static/css/main.aa68ac49.css.map",
+    "main.80e74368.js.map": "/Ecomerce-with-react-redux/static/js/main.80e74368.js.map",
     "496.424ffeac.chunk.js.map": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4516e5c2.css",
-    "static/js/main.9833d407.js"
+    "static/css/main.aa68ac49.css",
+    "static/js/main.80e74368.js"
   ]
 }

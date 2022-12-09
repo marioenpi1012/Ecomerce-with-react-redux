@@ -9,9 +9,9 @@ import useSortPrice from "../../../hooks/sortPrice/useSortPrice";
 import Banner from "../../UI/Banner";
 import Products from "../../Products";
 import Style from './ProductCategory.module.scss';
-const ProductCategory = () =>{
+const ProductCategory = ({isLoading}) =>{
     const { categoryName } = useParams()
-    const image = useSortCategory(categoryName)
+    const [image, title] = useSortCategory(categoryName)
     const preventUndefinedSelector = () => undefined;
     let  products = useSelector(state => state.cart.filterBy)
 
@@ -29,7 +29,7 @@ const ProductCategory = () =>{
                     setPriceRange={setPriceRange}
                 />
                 <div className={Style.section}>
-                    <Banner image={image} />
+                    <Banner image={image} title={title} />
                     <Products data={products} />
                 </div>
             </div>

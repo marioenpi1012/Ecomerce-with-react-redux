@@ -8,6 +8,7 @@ header {
     z-index: 10;
 
 }
+
 .Nav {
     display: flex;
     width: 100%;
@@ -52,12 +53,9 @@ header {
             width: 75%;
             display: flex;
             justify-content: flex-end;
+            gap:1.25rem;
             &__left{
                 justify-content: flex-start;
-                gap:1.25rem;
-            }
-            &__right{
-                gap:1.25rem;
             }
             li {
                 list-style: none;

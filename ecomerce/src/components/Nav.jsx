@@ -30,8 +30,9 @@ const Nav = () => {
         }
 
     }, [lastYpos])
+    // navOpened ? body.style.overflowY = 'hidden' : body.style.overflowY = 'auto'
     if (navOpened & window.innerWidth <= 769) {
-        body.style.overflowY = 'hidden'
+        body.style.overflow = 'hidden'
     } else {
         body.style.overflowY = 'auto'
     }

@@ -1,5 +1,6 @@
 .Filter{
-    width: 25vw;
+    max-width: 20vw;
+    width: 100%;
     position: relative;
     &__container{
         display: flex;
@@ -45,6 +46,29 @@
                     }
                     label{
                         padding-left:0.5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:768px){
+    .Filter{
+        max-width: none;
+        &__container{
+            .category{
+                .title{
+                    font-size:1rem;
+                }
+                .selections > .selections__category{
+                    .price{
+                        padding-right: 0.5rem;
+                    }
+                    input{
+                        margin-right: 0.5rem;
+                    }
+                    label {
+                        padding-left:0;
                     }
                 }
             }

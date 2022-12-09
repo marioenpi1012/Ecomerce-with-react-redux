@@ -31,10 +31,9 @@ $background-color: #f0f4f7;
         justify-items: center;
         align-items: center;
         width: inherit;
-        height: 350px;
+        height: 300px;
         @media screen and (max-width:600px){
-            height: 160px;
-            width: 160px;
+            height: 250px;
         }
         img {
             height: 150px;

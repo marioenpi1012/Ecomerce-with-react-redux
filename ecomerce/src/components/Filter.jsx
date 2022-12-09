@@ -30,7 +30,7 @@ const Filter = ({setFilterByPrice, priceRange, setPriceRange}) =>{
                     <h2 className={Style.title}>Filter by price</h2>
                     <ul className={Style.selections}>
                         <li className={Style.selections__category}>
-                            <label htmlFor="price">0</label>
+                            <label className={Style.price} htmlFor="price">0</label>
                             <input 
                                 type="range" 
                                 name="price" 

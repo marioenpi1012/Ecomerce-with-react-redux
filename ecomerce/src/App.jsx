@@ -48,7 +48,7 @@ function App() {
                 <Route path='/shop' element={isLoading ? <Skeleton /> : <Shop />} />
                 <Route 
                     path='/shop/:categoryName' 
-                    element={<ProductCategory />}
+                    element={<ProductCategory isLoading={isLoading} />}
                     />
                 <Route path='/viewing' element={<SelectedProduct />}/>
                 <Route path='/cart' element={<Cart />}/>

@@ -1,3 +1,4 @@
+@import './style/Reset.module.css';
 @import './style/locomotive.css';
 $gray:rgba(196, 196, 196, 1);
 
@@ -11,10 +12,9 @@ $background-color:#f0f4f7;
 *{
   margin: 0;
   padding:0;
-  box-sizing: border-box;
 }
-html,body{
-  scroll-behavior: smooth;
+body{
+  // scroll-behavior: smooth;
   background-color: $background-color;
 }
 .App{

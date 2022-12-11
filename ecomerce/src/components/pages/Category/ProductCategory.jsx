@@ -22,7 +22,7 @@ const ProductCategory = ({isLoading}) =>{
     
     return (
         <AnimatedComponent className={Style.ProductCategory}>
-            <div className={Style.container}>
+            <div className={Style.container} data-scroll>
                 <Filter
                     setFilterByPrice={setFilterByPrice}
                     priceRange={priceRange}

@@ -15,17 +15,15 @@ const Shop = () => {
     filterBy = useSortPrice(filterByPrice, filterBy)
     const data = filterBy
     return (
-        <AnimatedComponent>
-            <div className={Style.Shop}>
-                <div className={Style.Product}>
-                    <div className={Style.container}>
-                        <Filter 
-                            setFilterByPrice={setFilterByPrice}
-                            priceRange={priceRange}
-                            setPriceRange={setPriceRange}
-                        />
-                        <Products data={data}  />
-                    </div>
+        <AnimatedComponent className={Style.Shop}>
+            <div className={Style.Product}>
+                <div className={Style.container}>
+                    <Filter 
+                        setFilterByPrice={setFilterByPrice}
+                        priceRange={priceRange}
+                        setPriceRange={setPriceRange}
+                    />
+                    <Products data={data}  />
                 </div>
             </div>
         </AnimatedComponent>

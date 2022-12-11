@@ -1,10 +1,9 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Style from '../style/Footer.module.scss';
 const Footer = () => {
     return (
-        <footer className={Style.Footer}>
+        <footer className={Style.Footer} data-scroll-section >
             <div className={Style.container}>
                 <div className={Style.logo}>
                     <NavLink to='/'>Narvick's Luxury Store</NavLink>

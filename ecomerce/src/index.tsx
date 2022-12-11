@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <Provider store={store}>
         <React.StrictMode>
-            <Router basename='/'>
+            <Router basename='/Ecomerce-with-react-redux'>
                 <App/>
             </Router>
         </React.StrictMode>

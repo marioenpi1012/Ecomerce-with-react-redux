@@ -39,7 +39,7 @@ const About = () => {
     return (
         <AnimatedComponent className='About'>
             <div className="header">Our Story</div>
-            <div className="container">
+            <div className="container" data-scroll>
                 <motion.div 
                     className="brand"
                     variants={variants}

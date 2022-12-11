@@ -3,21 +3,15 @@ import BackgroundImage from './UI/BackgroundImage';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-// gsap.registerPlugin( ScrollTrigger)
+
 const Landing = () =>{
     const ref = useRef(null)
     useEffect(() => {
     // This does not seem to work without a settimeout
     setTimeout(() => {
-        console.log(ref.current.offsetWidth);
-        console.log(ref.current.clientWidth);
-        console.log({ current: ref.current });
         let sections = gsap.utils.toArray('.Landing_page__T05jg');
-        const app = document.querySelector('#App')
-        console.log({app})
-        console.log({sections})
         gsap.to(sections, {
-            xPercent: -100 * (sections.length - 1),
+            xPercent: - 100 * (sections.length - 1),
             ease: "none",
             scrollTrigger: {
                 start: "top top",
@@ -33,8 +27,8 @@ const Landing = () =>{
         });
     }, []);
     return ( 
-        <div className={style.Landing} data-scroll-section>
-            <div className={style.container} ref={ref}>
+        <div className={style.Landing} data-scroll >
+            <div className={style.container} ref={ref}  >
                 <div className={style.page}  >
                     <BackgroundImage image='Landing1' className={`${style.image} ${style.imageLeft}`} />
                     <div className={style.collection}>
@@ -69,7 +63,6 @@ const Landing = () =>{
                     </div>
                     <BackgroundImage image='Landing6' className={`${style.image} ${style.imageRight}`} />
                 </div>
-            
             </div>
         </div>
     )

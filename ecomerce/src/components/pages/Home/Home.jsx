@@ -12,63 +12,16 @@ import HomeProductCard from '../../HomeProductCard'
 import CategoryShow from '../../UI/CategoryShow'
 import Landing from '../../Landing'
 import useLocoScroll from '../../../hooks/useLocoScroll';
-const Home = ({start}) => {
-    console.log(start)
-    const ref = useRef(null);
-    // useLocoScroll(!start)
+const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter((item, i) => Number(item.rating.rate) > 3.5 && i <= 4 )
-    const variants = {
-        offscreen:{
-            x:"100%",
-            opacity:0
-        },
-        onscreen:{
-            x: 0,
-            opacity:1,
-            transition:{
-                duration:1
-            }
-        }
-    }
-    const containerVariants ={
-        hidden:{
-            opacity:0,
-            x:"100vw"
-        },
-        start:{
-            opacity:1,
-            x:0,
-            transition:{
-                when:"beforeChildren",
-                staggerChildren:0.4,
-                duration:1
-            }
-        },
-        exit:{
-            x: "-100vw",
-            transition:{
-                ease:"easeInOut",
-                duration:1
-            }
-        }
-    }
     
     return (
-        // <AnimatedComponent 
-        // >
-            <div className={Style.Home} ref={ref} 
-                // data-scroll-container
-                >
-                <Landing  />
-                <HomeProductCard products={highestRated} />
-                {/* <CategoryShow /> */}
-            </div>
-
-            
-        // </AnimatedComponent>
-
-        
+        <AnimatedComponent className={Style.Home} >
+            <Landing />
+            <HomeProductCard products={highestRated} />
+            <CategoryShow />
+        </AnimatedComponent>
     )
 }
 

@@ -5,16 +5,17 @@ import LocomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss'
 gsap.registerPlugin(ScrollTrigger);
 
-const useLocoScroll = (start) =>{
+const useLocoScroll = (isLoading) =>{
     useEffect(()=>{
-        if(!start) return ;
+        if(isLoading) return ;
         let locoScroll = null;
         const scrollEl = document.querySelector('#App')
-        console.log({ref: scrollEl})
+
         locoScroll = new LocomotiveScroll({
             el: scrollEl,
             smooth: true,
             multiplier: 1,
+            class:'is-reveal'
         });
         
         locoScroll.on("scroll", () => {
@@ -24,19 +25,19 @@ const useLocoScroll = (start) =>{
         ScrollTrigger.scrollerProxy(scrollEl, {
             scrollTop(value) {
                 if (locoScroll) {
-                    console.log('y', {value}, {locoScroll})
-                return arguments.length
-                    ? locoScroll.scrollTo(value, 0, 0)
-                    : locoScroll.scroll.instance.scroll.y;
+                    console.log('y', locoScroll)
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.y;
                 }
                 return null;
             },
             scrollLeft(value) {
                 if (locoScroll) {
-                    console.log('x', {value}, {locoScroll})
-                return arguments.length
-                    ? locoScroll.scrollTo(value, 0, 0)
-                    : locoScroll.scroll.instance.scroll.x;
+                    console.log('x', locoScroll)
+                    return arguments.length
+                        ? locoScroll.scrollTo(value, 0, 0)
+                        : locoScroll.scroll.instance.scroll.x;
                 }
                 return null;
             },
@@ -60,7 +61,7 @@ const useLocoScroll = (start) =>{
                 console.log("Kill", locoScroll);
             }
         }
-    }, [start])
+    }, [isLoading])
 }
 
 export default useLocoScroll

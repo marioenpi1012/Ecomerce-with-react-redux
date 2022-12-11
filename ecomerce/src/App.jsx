@@ -20,10 +20,10 @@ function App() {
     const ref = useRef(null)
     const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(true)
-    useLocation(!isLoading)
     const location = useLocation()
+    useLocoScroll(isLoading)
     const fetchProducts = async () => {
-        // setIsLoading(true)
+        setIsLoading(true)
         const response = await axios
             .get('https://fakestoreapi.com/products')
             .then((response) => {
@@ -33,7 +33,6 @@ function App() {
                 console.log('err', err)
             })
             setIsLoading(false)
-
     }
     useEffect(() => {
         fetchProducts()
@@ -41,23 +40,23 @@ function App() {
 
     return (
         <div className='App' id='App' data-scroll-container> 
-        < Nav /> 
-        <AnimatePresence mode='wait'>
-            <Routes location={location} key={location.pathname}>
-                <Route path='/' exact element={<Home start={isLoading} />} />
-                <Route path='/shop' element={isLoading ? <Skeleton /> : <Shop />} />
-                <Route 
-                    path='/shop/:categoryName' 
-                    element={<ProductCategory isLoading={isLoading} />}
-                    />
-                <Route path='/viewing' element={<SelectedProduct />}/>
-                <Route path='/cart' element={<Cart />}/>
-                <Route path='/about' element={<About />}/>
-                <Route path='/contact' element={<Contact />}/>
-            </Routes>
-        </AnimatePresence>
-        <Footer/>
-    </div>
+            < Nav /> 
+            <AnimatePresence mode='wait'>
+                <Routes location={location} key={location.pathname}>
+                    <Route path='/' exact element={<Home start={isLoading} />} />
+                    <Route path='/shop' element={isLoading ? <Skeleton /> : <Shop />} />
+                    <Route 
+                        path='/shop/:categoryName' 
+                        element={<ProductCategory isLoading={isLoading} />}
+                        />
+                    <Route path='/viewing' element={<SelectedProduct />}/>
+                    <Route path='/cart' element={<Cart />}/>
+                    <Route path='/about' element={<About />}/>
+                    <Route path='/contact' element={<Contact />}/>
+                </Routes>
+            </AnimatePresence>
+            <Footer/>
+        </div>
     )
 }
 

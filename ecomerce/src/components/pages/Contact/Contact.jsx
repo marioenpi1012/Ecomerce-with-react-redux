@@ -27,7 +27,7 @@ const Contact = () => {
     }
     return (
         <AnimatedComponent className={Style.Contact}>
-            <section className={Style.container}>
+            <section className={Style.container} data-scroll>
                 <div className={Style.form}>
                     <h1 className={Style.header}>
                         Love to hear from you, <br />

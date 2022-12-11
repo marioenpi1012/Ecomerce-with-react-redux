@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const AnimatedComponent = ({children, className = ''}) =>{
@@ -21,6 +20,7 @@ const AnimatedComponent = ({children, className = ''}) =>{
             variants={pageVariants}
             transition={{duration:1}}
             className={className}
+            data-scroll-section
         >
             {children}
         </motion.main>

@@ -7,7 +7,7 @@ const CategoryShow = () =>{
                 <BackgroundImage image='homeProductCard2'  />
                 <BackgroundImage image='homeProductCard1' className={style.largeImageVertical} />
                 <BackgroundImage image='homeProductCard4' />
-                <BackgroundImage image='homeProductCard3' />
+                <BackgroundImage image='homeProductCard3' className={style.topCenter} />
                 <BackgroundImage image='homeProductCard6' />
                 <BackgroundImage image='homeProductCard5'  className={style.largeImageHorizontal}/>
             </div>
@@ -15,4 +15,4 @@ const CategoryShow = () =>{
     )
 }
 
-export default CategoryShow;
+export default CategoryShow;            

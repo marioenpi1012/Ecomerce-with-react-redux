@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Ecomerce-with-react-redux/static/css/main.aa68ac49.css",
-    "main.js": "/Ecomerce-with-react-redux/static/js/main.80e74368.js",
+    "main.css": "/Ecomerce-with-react-redux/static/css/main.ed50d5c8.css",
+    "main.js": "/Ecomerce-with-react-redux/static/js/main.555b86bc.js",
     "static/js/496.424ffeac.chunk.js": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js",
     "static/media/women.jpg": "/Ecomerce-with-react-redux/static/media/women.6f58141286b32c7dd456.jpg",
     "static/media/landingPage.png": "/Ecomerce-with-react-redux/static/media/landingPage.4c7c9b4ff4369804ac8c.png",
@@ -11,12 +11,12 @@
     "static/media/electronics.jpg": "/Ecomerce-with-react-redux/static/media/electronics.7e6b0b94fd45e40566ba.jpg",
     "static/media/accessories.jpg": "/Ecomerce-with-react-redux/static/media/accessories.e7f29822cd5ac3a228e0.jpg",
     "index.html": "/Ecomerce-with-react-redux/index.html",
-    "main.aa68ac49.css.map": "/Ecomerce-with-react-redux/static/css/main.aa68ac49.css.map",
-    "main.80e74368.js.map": "/Ecomerce-with-react-redux/static/js/main.80e74368.js.map",
+    "main.ed50d5c8.css.map": "/Ecomerce-with-react-redux/static/css/main.ed50d5c8.css.map",
+    "main.555b86bc.js.map": "/Ecomerce-with-react-redux/static/js/main.555b86bc.js.map",
     "496.424ffeac.chunk.js.map": "/Ecomerce-with-react-redux/static/js/496.424ffeac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aa68ac49.css",
-    "static/js/main.80e74368.js"
+    "static/css/main.ed50d5c8.css",
+    "static/js/main.555b86bc.js"
   ]
 }

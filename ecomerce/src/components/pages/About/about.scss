@@ -1,0 +1,65 @@
+@import '../../../style//Color.module';
+.About {
+    margin: 7rem 0 0;
+    .header {
+        font-size: 2.5rem;
+        text-align: center;
+        color: $main-font-color;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .container > #designer-image {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+    .container {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+        margin: 2.5rem 0;
+        .title {
+            font-size: 2rem;
+            color: $secondary-font-color;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+        .line {
+            border-bottom: 3px solid $background-color;
+            width: 6%;
+            margin: 1rem auto;
+        }
+        .brand,
+        .designers {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 90vh;
+            text-align: center;
+            width: 100%;
+            margin: 0 auto;
+            background: $main-font-color;
+            p {
+                width: 70%;
+                margin: 1rem auto;
+                font-size: 1rem;
+                color: $secondary-light-font-color;
+            }
+        }
+        .image {
+            min-height: 700px;
+            // background: center center no-repeat fixed;
+            background: center center no-repeat;
+            background-size: cover;
+        }
+        @supports (-webkit-touch-callout:none) {
+            .image {
+                background: center top no-repeat scroll;
+                background-size: auto 100%;
+            }
+        }
+    }
+}

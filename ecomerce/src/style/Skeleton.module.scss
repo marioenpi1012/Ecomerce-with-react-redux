@@ -22,6 +22,11 @@
                     background-color: $main-font-color;
                     animation: skeleton 1s ease infinite alternate;
                     margin: 0;
+                    @keyframes skeleton {
+                        to{
+                            opacity: 0.5;
+                        }
+                    }
                 }
             }
         }

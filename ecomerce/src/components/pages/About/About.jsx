@@ -3,6 +3,7 @@ import Logo from '../../../assets/images/logo.jpg'
 import Designer from '../../../assets/images/designers.jpg'
 import { motion } from 'framer-motion'
 import AnimatedComponent from '../../UI/AnimatedComponent'
+import './about.scss'
 const About = () => {
     const variants = {
         offscreen:{

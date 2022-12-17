@@ -1,0 +1,92 @@
+.item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.75rem;
+  object-fit: contain;
+  transition: transform 450ms;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.item .image {
+  background-color: #ffffffa1;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: inherit;
+  height: 300px;
+}
+@media screen and (max-width: 600px) {
+  .item .image {
+    height: 250px;
+  }
+}
+.item .image img {
+  height: 150px;
+  width: 100%;
+  margin: 1rem auto;
+  max-width: 140px;
+  display: block;
+  position: relative;
+}
+.item .title, .item .price {
+  color: #28292b;
+  font-weight: 500;
+  text-decoration: none;
+}
+.item .title {
+  width: 60%;
+  margin-right: auto;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media screen and (min-width: 1650px) {
+  .item .title {
+    font-size: 1.5rem;
+  }
+  .item .title ~ .price {
+    font-size: 1rem;
+  }
+}
+.item a {
+  text-decoration: none;
+}
+.item a input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  padding: 1rem 2.5rem;
+  color: #28292b;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+@media (hover: hover) {
+  .item a #quickView {
+    display: none !important;
+  }
+  .item:focus, .item:hover {
+    transform: scale(1.2);
+    transition: ease-in-out 1s;
+    z-index: 1;
+    background-color: #ffff;
+  }
+  .item:focus a #quickView, .item:hover a #quickView {
+    display: flex !important;
+  }
+}

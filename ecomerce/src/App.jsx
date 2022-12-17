@@ -15,13 +15,12 @@ import Footer from './components/Footer';
 import Skeleton from './components/UI/Skeleton';
 import ProductCategory from './components/pages/Category/ProductCategory'
 import { AnimatePresence } from 'framer-motion';
-import useLocoScroll from './hooks/useLocoScroll';
+
 function App() {
     const ref = useRef(null)
     const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(true)
     const location = useLocation()
-    useLocoScroll(isLoading)
     const fetchProducts = async () => {
         setIsLoading(true)
         const response = await axios
@@ -34,16 +33,19 @@ function App() {
             })
             setIsLoading(false)
     }
+
+
     useEffect(() => {
         fetchProducts()
     }, [])
 
     return (
-        <div className='App' id='App' data-scroll-container> 
+        <div className='App' id='App' 
+            > 
             < Nav /> 
             <AnimatePresence mode='wait'>
                 <Routes location={location} key={location.pathname}>
-                    <Route path='/' exact element={<Home start={isLoading} />} />
+                    <Route path='/' exact element={<Home isLoading={isLoading} />} />
                     <Route path='/shop' element={isLoading ? <Skeleton /> : <Shop />} />
                     <Route 
                         path='/shop/:categoryName' 

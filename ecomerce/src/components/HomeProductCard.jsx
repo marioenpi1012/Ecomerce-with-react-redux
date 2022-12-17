@@ -4,7 +4,7 @@ import { truncate } from './utils/utils'
 
 const HomeProductCard = ({title, products}) =>{
     return(
-        <section className={style.HomeProductCard}>
+        <section className={style.HomeProductCard} data-scroll-section>
             <div className={style.container}>
                 <div className={style.productsInfo}>
                     <h1 className={style.title}>Featured Products</h1>

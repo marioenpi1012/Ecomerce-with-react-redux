@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Style from '../style/Footer.module.scss';
 const Footer = () => {
     return (
-        <footer className={Style.Footer} data-scroll-section >
+        <footer className={Style.Footer} >
             <div className={Style.container}>
                 <div className={Style.logo}>
                     <NavLink to='/'>Narvick's Luxury Store</NavLink>

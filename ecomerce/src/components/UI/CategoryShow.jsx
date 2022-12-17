@@ -2,7 +2,7 @@ import style from '../../style/Category.module.scss';
 import BackgroundImage from './BackgroundImage';
 const CategoryShow = () =>{
     return (
-        <section className={style.CategoryShow}>
+        <section className={style.CategoryShow} data-scroll-section>
             <div className={style.container}>
                 <BackgroundImage image='homeProductCard2'  />
                 <BackgroundImage image='homeProductCard1' className={style.largeImageVertical} />

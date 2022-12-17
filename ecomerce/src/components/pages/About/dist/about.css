@@ -1,0 +1,64 @@
+.About {
+  margin: 7rem 0 0;
+}
+.About .header {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #28292b;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.About .container > #designer-image {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+.About .container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 2.5rem 0;
+}
+.About .container .title {
+  font-size: 2rem;
+  color: #818181;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.About .container .line {
+  border-bottom: 3px solid #f0f4f7;
+  width: 6%;
+  margin: 1rem auto;
+}
+.About .container .brand,
+.About .container .designers {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90vh;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  background: #28292b;
+}
+.About .container .brand p,
+.About .container .designers p {
+  width: 70%;
+  margin: 1rem auto;
+  font-size: 1rem;
+  color: #94979a;
+}
+.About .container .image {
+  min-height: 700px;
+  background: center center no-repeat;
+  background-size: cover;
+}
+@supports (-webkit-touch-callout: none) {
+  .About .container .image {
+    background: center top no-repeat scroll;
+    background-size: auto 100%;
+  }
+}

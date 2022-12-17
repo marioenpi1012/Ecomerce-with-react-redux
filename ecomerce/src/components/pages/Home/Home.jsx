@@ -11,15 +11,18 @@ import AnimatedComponent from '../../UI/AnimatedComponent'
 import HomeProductCard from '../../HomeProductCard'
 import CategoryShow from '../../UI/CategoryShow'
 import Landing from '../../Landing'
-import useLocoScroll from '../../../hooks/useLocoScroll';
+import Test from './Test'
+
 const Home = () => {
     const state = useSelector(state => state.cart.products)
     const highestRated = state.filter((item, i) => Number(item.rating.rate) > 3.5 && i <= 4 )
     
+    
     return (
         <AnimatedComponent className={Style.Home} >
+            {/* <Test /> */}
             <Landing />
-            <HomeProductCard products={highestRated} />
+            <HomeProductCard products={highestRated}  />
             <CategoryShow />
         </AnimatedComponent>
     )

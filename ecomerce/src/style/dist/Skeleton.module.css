@@ -1,0 +1,105 @@
+.skeletonShop {
+  margin: 7rem auto;
+  max-width: 119rem;
+  width: 100%;
+}
+.skeletonShop .skeletonProduct .skeletonContainer {
+  width: 75vw;
+  margin: 3rem 2rem;
+  margin-left: auto;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 2.5rem;
+  justify-content: center;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.75rem;
+  object-fit: contain;
+  transition: transform 450ms;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 326px;
+  height: 350px;
+  background-color: #28292b;
+  animation: skeleton 1s ease infinite alternate;
+  margin: 0;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .image {
+  background-color: #ffffffa1;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: inherit;
+  height: 300px;
+}
+@media screen and (max-width: 600px) {
+  .skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .image {
+    height: 250px;
+  }
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .image img {
+  height: 150px;
+  width: 100%;
+  margin: 1rem auto;
+  max-width: 140px;
+  display: block;
+  position: relative;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .title, .skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .price {
+  color: #28292b;
+  font-weight: 500;
+  text-decoration: none;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .title {
+  width: 60%;
+  margin-right: auto;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+@media screen and (min-width: 1650px) {
+  .skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .title {
+    font-size: 1.5rem;
+  }
+  .skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem .title ~ .price {
+    font-size: 1rem;
+  }
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem a {
+  text-decoration: none;
+}
+.skeletonShop .skeletonProduct .skeletonContainer .skeletonItems .skeletonItem a input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  padding: 1rem 2.5rem;
+  color: #28292b;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+@keyframes skeleton {
+  to {
+    opacity: 0.5;
+  }
+}

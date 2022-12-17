@@ -1,4 +1,21 @@
 @import './Color.module';
-.item{
+.item {
     @include item;
+}
+@media (hover: hover) {
+    .item {
+        a #quickView {
+            display: none !important;
+        }
+        &:focus,
+        &:hover {
+            transform: scale(1.2);
+            transition: ease-in-out 1s;
+            z-index: 1;
+            background-color: #ffff;
+            a #quickView {
+                display: flex !important;
+            }
+        }
+    }
 }
